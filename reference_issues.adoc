@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: reference_issues.html 
+keywords: new, features, bugs, known issues, limitations, known limitations, supported, unsupported, release notes 
+summary: ここでは、サービスの正常な使用を妨げる可能性がある既知の問題について記載します。Bugs Online のレポートがある場合は、バグ ID にレポートへのリンクが含まれています。 
+---
+= 既知の問題
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ここでは、サービスの正常な使用を妨げる可能性がある既知の問題について記載します。Bugs Online のレポートがある場合は、バグ ID にレポートへのリンクが含まれています。
+
+[cols="12,53"]
+|===
+| バグ ID | 説明 
+
+
+| https://mysupport.netapp.com/NOW/cgi-bin/bol?Type=Detail&Display=1234597["1234597"^] | Converged Systems Advisor は、 4 つを超える SVM の DNS 設定を修正しません。 
+
+
+| https://mysupport.netapp.com/NOW/cgi-bin/bol?Type=Detail&Display=1234603["1234603"^] | 収集を有効にして複数の修正ジョブを作成すると、最初の修正ジョブに対してのみ収集がトリガーされます。 
+
+
+| https://mysupport.netapp.com/NOW/cgi-bin/bol?Type=Detail&Display=1335590["1335590"^] | 「ストレージフェイルオーバー状態」の CA ルールが Converged Systems Advisor から削除されました。 
+
+
+| https://mysupport.netapp.com/NOW/cgi-bin/bol?Type=Detail&Display=1335593["1335593"^] | Nexus スイッチと MDS スイッチのバージョン番号が「 Upgrade Advisor 」に誤って表示されます。 
+|===

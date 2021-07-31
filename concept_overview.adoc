@@ -1,0 +1,21 @@
+---
+sidebar: sidebar 
+permalink: concept_overview.html 
+keywords: converged systems advisor, netapp, overview, concepts, features, use case, video, value 
+summary: Converged Systems Advisor は、 FlexPod インフラの導入を検証し、ビジネス継続性を確保するための継続的な監視と通知を提供します。 
+---
+= Converged Systems Advisor の概要
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Converged Systems Advisor は、 FlexPod インフラの導入を検証し、ビジネス継続性を確保するための継続的な監視と通知を提供します。
+
+Converged Systems Advisor の概要については、次のビデオをご覧ください。
+
+video::CZHu0Xp33BY[youtube, width=848,height=480]
+Converged Systems Advisor が提供する価値の詳細については、 https://www.netapp.com/us/media/ds-3896.pdf["データシートをご覧ください"^]。

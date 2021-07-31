@@ -1,0 +1,58 @@
+---
+sidebar: sidebar 
+permalink: task_deployment_validation.html 
+keywords: partner, validate, deployment validation 
+summary: ネットアップのパートナー様は、導入の検証を実行する前に、 Converged Systems Advisor を利用してエージェントを導入し、ポータルをセットアップすることができます。 
+---
+= パートナー様向けの導入検証レポート
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ネットアップのパートナー様は、導入の検証を実行して、 FlexPod コンバージドインフラが正しく設定されていることを確認できます。その後、パートナーがお客様にレポートを提出できます。
+
+.手順
+. にログインします https://csa.netapp.com/["Converged Systems Advisor ポータル"^]。
+. 顧客リストから顧客の構成を展開します。
++
+image:screenshot_partner_customer_list.gif["に、お客様の 3 つの統合インフラを示します。"]
+
+. Deployment Validation Report （展開検証レポート）で、 * Generate * （生成）をクリックします。
+. レポートをブラウザ、 PDF 、 E メールのいずれで表示するかを選択します。
+. レポートを確認して、相互運用性の問題と導入検証エラーを修正してください。
++
+* 例 *
+
++
+この設定例では、 Nexus スイッチのファームウェアバージョンはサポートされていません。
+
++
+image:screenshot_validation_interop.gif["に、 Deployment Validation Report の相互運用性に関するセクションを示します。サポート対象外のファームウェアバージョンのスイッチが 2 つ含まれています。"]
+
++
+スイッチ接続の問題が原因で 4 つの検証ルールも失敗しました：
+
++
+image:screenshot_validation_errors.gif["に、 Deployment Validation Report の Errors セクションを示します。ファブリックインターコネクトは、対応する Nexus ファイバチャネルファブリックにアップリンクしません。"]
+
++
+ファームウェアをアップグレードすると、設定の相互運用性が修正され、リンクを追加することで、検証ルールに失敗している問題が修正される可能性があります。
+
+. 問題を修正したら、データを収集して Converged Systems Advisor に最新の設定データがあることを確認します。
++
+.. 統合インフラを選択
+.. 右上の * Collect * をクリックします。
++
+image:screenshot_collect_button.gif["は、右上にある収集ボタンです。コンバージドインフラを選択すると表示されます。"]
+
+
+
+. 問題が修正されたことを確認するために、もう一度レポートを生成します。
+. 最終的な Deployment Validation Report をお客様に送信します。
+
+
+統合インフラがベストプラクティスに従ってセットアップされます。

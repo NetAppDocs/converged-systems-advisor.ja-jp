@@ -1,0 +1,197 @@
+---
+sidebar: sidebar 
+permalink: task_create_accounts_flexpod_devices.html 
+keywords: create, accounts, FlexPod, devices, support, accounts, account, configuration, registering, FlexPod, VMware, ESXi server, connection, connectivity, agent, portal 
+summary: 開始するには、 FlexPod デバイスのアカウントを設定します。 
+---
+= FlexPod デバイスのアカウントを作成します
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+FlexPod デバイスのアカウントを設定するには、次の手順を実行します。
+
+* <<Create a read-only account for Cisco UCS Manager>>
+* <<Create a read-only account for Nexus switches>>
+* <<Create an admin account for ONTAP>>
+* <<Create a read-only account for VMware>>
+* <<Create a read-only account on the APIC>>
+* <<Grant CSA user privileges using a TACACS+ server>>
+
+
+エージェントはこれらのアカウントを使用して、各デバイスから構成情報を収集します。
+
+
+
+== Cisco UCS Manager の読み取り専用アカウントを作成します
+
+.手順
+. Cisco UCS Manager にログインします。
+. ローカルで認証されたユーザ、 _csa-readonly_readonly を作成します。
++
+
+TIP: デフォルトでは、新しいユーザはすべて読み取り専用です。
+
+
+
+
+
+== Nexus スイッチの読み取り専用アカウントを作成します
+
+.手順
+. SSH または Telnet を使用して各 Nexus スイッチにログインします。
+. グローバルコンフィギュレーションモードを開始します。
++
+....
+ configure terminal
+.. Create a new user:
+....
++
+....
+ username [name] password [password] role network-operator
+.. Save the configuration:
+....
++
+....
+copy running configuration startup configuration
+....
+
+
+TACACS+ サーバを使用していて、 CSA ユーザ権限を付与する必要がある場合は、に進みます link:task_grant_user_privileges.html["TACACS+ サーバを使用した CSA ユーザ権限の付与"]。
+
+
+
+== ONTAP の管理者アカウントを作成します
+
+.手順
+. OnCommand システムマネージャにログインし、設定アイコンをクリックします。
++
+image:screenshot_system_manager_settings.gif["System Manager の設定アイコン。"]。
+
+. [ ユーザー ] ページで、 [ * 追加 ] をクリックします。
+. ユーザ名とパスワードを入力し、 admin アクセス権を持つユーザログイン方法として * ssh * 、 * ontapi * 、 * console * を追加します。
++
+image:screenshot_system_manager_add_user.gif["に、 System Manager の Add User 画面を示します。この画面では、新しい ONTAP ユーザに ssh と ontapi の権限が割り当てられています。"]
+
+
+
+
+
+== VMware の読み取り専用アカウントを作成します
+
+.手順
+. vCenter にログインします。
+. vCenter のメニューで、 * Administration * を選択します。
+. [ 役割 ] で、 [* 読み取り専用 *] を選択します。
+. Clone role action * のアイコンをクリックし、名前を * CSA * に変更します。
+. 新しく作成した *CSA* ロールを選択します。
+. [ 役割を編集（ Edit role ） ] アイコンをクリックします。
+. 「 * 役割の編集 * 」で「 * グローバル * 」を選択し、「 * ライセンス * 」をチェックします。
+. サイドバーで、 * シングルサインオン -> ユーザーとグループ -> 新規ユーザーの作成 * を選択します。
+. ドメイン vpsher.local の下の新しいユーザ * CSACRO * に名前を付けます。
+. サイドバーで、 * アクセスコントロール * の下の * グローバル許可 * を選択します。
+. ユーザ * CSACRO * を選択し、ロール * CSA* を割り当てます。
+. Web Client にログインします。
++
+ユーザ ID ： * CSARO@vsphere.loca l * 、および以前に作成したパスワードを使用します。
+
+
+
+
+
+== APIC で読み取り専用アカウントを作成します
+
+.手順
+. [*Admin*] をクリックします。
+. [Create new local users] をクリックします。
+. [* User Identity* （ユーザー ID ） ] で、ユーザー情報を入力します。
+. [* セキュリティ *] で、 [ すべてのセキュリティドメインオプション ] を選択します。
+. 必要に応じて、 *+* をクリックしてユーザ証明書と SSH キーを追加します。
+. 「 * 次へ * 」をクリックします。
+. [*+*] をクリックして、ドメインのロールを追加します。
+. ドロップダウン・メニューから * 役割名 * を選択します
+. [* Role Privilege Type] で [*Read] を選択します。
+. [ 完了 ] をクリックします。
+
+
+
+
+== TACACS+ サーバを使用して CSA ユーザ権限を付与します
+
+TACACS+ サーバを使用していて、スイッチに CSA ユーザ権限を付与する必要がある場合は、ユーザ権限グループを作成し、 CSA が必要とする特定のセットアップコマンドへのグループアクセスを許可する必要があります。
+
+次のコマンドは、 TACACS+ サーバのコンフィギュレーションファイルに記述する必要があります。
+
+.手順
+. 次のコマンドを入力して、読み取り専用アクセス権を持つユーザ権限グループを作成します。
+
+
+[listing]
+----
+  group=group_name {
+    default service=deny
+    service=exec{
+      priv-lvl=0
+    }
+  }
+----
+. CSA が必要とするコマンドへのアクセスを許可するには、次のコマンドを入力します。
+
+
+[listing]
+----
+  cmd=show {
+    permit "environment"
+    permit "version"
+    permit "feature"
+    permit "feature-set"
+    permit hardware.*
+    permit "interface"
+    permit "interface"
+    permit "interface transceiver"
+    permit "inventory"
+    permit "license"
+    permit "module"
+    permit "port-channel database"
+    permit "ntp peers"
+    permit "license usage"
+    permit "port-channel summary"
+    permit "running-config"
+    permit "startup-config"
+    permit "running-config diff"
+    permit "switchname"
+    permit "int mgmt0"
+    permit "cdp neighbors detail"
+    permit "vlan"
+    permit "vpc"
+    permit "vpc peer-keepalive"
+    permit "mac address-table"
+    permit "lacp port-channel"
+    permit "policy-map"
+    permit "policy-map system type qos"
+    permit "policy-map system type queuing"
+    permit "policy-map system type network-qos"
+    permit "zoneset active"
+    permit "san-port-channel summary"
+    permit "flogi database"
+    permit "fcns database detail"
+    permit "fcns database detail"
+    permit "zoneset active"
+    permit "vsan"
+    permit "vsan usage"
+    permit "vsan membership"
+    }
+----
+. 次のコマンドを入力して、新しく作成したグループに CSA ユーザアカウントを追加します。
+
+
+[listing]
+----
+  user=user_account{
+    member=group_name
+    login=file/etc/passwd
+  }
+----

@@ -1,0 +1,22 @@
+---
+sidebar: sidebar 
+permalink: task_grant_user_privileges.html 
+keywords: grant, user, privileges, TACACS+, server, group, command, commands, access, CSA, user, account 
+summary: TACACS+ サーバを使用していて、スイッチに CSA ユーザ権限を付与する必要がある場合は、ユーザ権限グループを作成し、 CSA が必要とする特定のセットアップコマンドへのグループアクセスを許可する必要があります。 
+---
+= TACACS+ サーバを使用して CSA ユーザ権限を付与します
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+TACACS+ サーバを使用していて、スイッチに CSA ユーザ権限を付与する必要がある場合は、ユーザ権限グループを作成し、 CSA が必要とする特定のセットアップコマンドへのグループアクセスを許可する必要があります。次のコマンドは、 TACACS+ サーバのコンフィギュレーションファイルに記述する必要があります。
+
+.手順
+. 次のコマンドを入力して、読み取り専用アクセス権を持つユーザ権限グループを作成します。 group=group_name ｛ default service=deny service=exec ｛ priv-lvl=0 ｝
+. CSA が必要とするコマンドへのアクセスを許可するには、次のコマンドを入力します。 cmd= show ｛ permit "environment "permit " version " permit " feature "permit " feature-set "permit hardware * permit " interface "permit " interface transceiver "permit " inventory " permit " module "permit " port-channel database "NTP peers " permit " ntp peers " permit " ntp peers " port channel summary "permit" portchannel summary "startup-config "running-config permit "CDP neighbors detail "permit "vlan "permit "vPC" permit "vc peer-keepalive" mac address-table "permit "LACP portchannel" permit "policy-map " policy-map system type qos "permit " policy-map system type queueing" policy-map system type queueing "permit " policy-map system type network-qos" permit " zoneset active "permit " zoneset active "fclogfns database permit " 「 zoneset active 」 permit 「 vsan 」 permit 「 vsan usage 」 permit 「 vsan membership 」 ｝ を許可します
+. 次のコマンドを入力して、新しく作成したグループに CSA ユーザアカウントを追加します。 user=user_account ｛ member=group_name login=file /etc/passwd ｝
+

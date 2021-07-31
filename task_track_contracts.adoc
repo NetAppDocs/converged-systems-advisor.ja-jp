@@ -1,0 +1,28 @@
+---
+sidebar: sidebar 
+permalink: task_track_contracts.html 
+keywords: track, support, contracts, renew, converged, infrastructure, device, devices, 
+summary: 構成内の各デバイスのサポート契約の詳細を、開始日、終了日、契約 ID などの情報として追加できます。 
+---
+= サポート契約の追跡
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+構成内の各デバイスのサポート契約に関する詳細（開始日、終了日、契約 ID ）を追加できます。これにより、各デバイスのサポート契約を更新する時期を把握できるように、詳細を中央の場所で簡単に追跡できます。
+
+.手順
+. [ * CI の選択 * ] をクリックして、コンバージドインフラストラクチャを選択します。
+. サポート契約ウィジェットで、 * 契約の編集 * アイコンをクリックします。
+. [ 開始日 * （ Start Date ） ] と [ 終了日 * （ * End Date ） ] を選択し、 * 契約 ID * を入力します。
+. [Submit （送信） ] をクリックします。
+. 構成内の各デバイスについて、上記の手順を繰り返します。
+
+
+Converged Systems Advisor に、各デバイスのサポート契約の詳細が表示されるようになりました。有効なサポート契約と有効期限が切れているデバイスを簡単に確認できます。
+
+image:screenshot_support_contracts.gif["に、 4 つのサポート契約を示します。 1 つは期限切れで、もう 1 つは有効です。"]

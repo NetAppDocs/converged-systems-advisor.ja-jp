@@ -1,0 +1,55 @@
+---
+sidebar: sidebar 
+permalink: task_setting_static_ip.html 
+keywords: networking, ip address, static, static ip, agent 
+summary: DHCP サーバがない環境では、 Converged Systems Advisor エージェントに静的 IP アドレスを設定します。 
+---
+= エージェントに静的 IP アドレスを設定します
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+DHCP サーバがない環境では、 Converged Systems Advisor エージェントに静的 IP アドレスを設定します。
+
+.手順
+. VMware vSphere Client を使用して、エージェントの仮想マシンコンソールにログインします。
++
+デフォルトのユーザ名は * CSA * で、デフォルトのパスワードは * netapp * です。プロンプトが表示されたら、パスワードを変更します。
+
+. CSA プロンプトで「 sudo su –」と入力して root になります。
+. 「 #systemctl stop csa.service` 」と入力して CSA サービスを停止します。
+. 次のコマンドを入力して、正しいインターフェイスファイル名を確認します。
++
+この例では、インターフェイスファイル名は「 eth0 」です。
+
++
+ls /etc/network/interfaces.d/
+
+. 「 #/sbin/ifdown eth0 」と入力して、アクティブインターフェイスを停止します。
+. /etc/network/interfaces.d/eth0 ファイルを任意のエディタで編集します。
++
+「 #nano /etc/network/interfaces.d/eth0 」または「 #vi /etc/network/interfaces.d/eth0 」
+
++
+このファイルには次のものが含まれています
+
++
+「 allow-hotplug eth0 `iface eth0 inet dhcp 」を参照してください
+
+. 「 iface eth0 inet dhcp 」を削除して、次の項目を追加します。注：下の例のフィールド名に続くすべてのエントリに正しい値を代入する必要があります。たとえば '192.168.11.1' は ' この例のゲートウェイの値ですただし '192.168.11.1' ではなく ' ゲートウェイの正しいアドレスを入力する必要があります
++
+「 iface eth0 inet static 」アドレス 192.168.11.100 「 netmask 255.255.255.0 」「 gateway 192.168.11.1 」「 dns -domain example.com 」「 ns-nameservers 192.168.11.1 」
+
+. ファイルを保存します。
++
+nano で、保存するには、「 * Ctrl + o * 」の後に「 * Ctrl + x * 」と入力します。
+
+. 構成ファイルを開くには 'vi /etc/resolv.conf と入力します
+. ファイルの先頭に「 nameserver <IP_address> 」を追加します。
+. 「 #ifup eth0 」と入力して、ネットワークインターフェイスを起動します。
+. 「 systemctl start csa.service` 」と入力して、 Converged Systems Advisor を再起動します。
+

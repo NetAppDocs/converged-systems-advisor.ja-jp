@@ -1,0 +1,46 @@
+---
+sidebar: sidebar 
+permalink: task_prepare_environment.html 
+keywords: prepare, environment, verifying, support, accounts, account, configuration, registering, FlexPod, VMware, ESXi server, connection, connectivity, agent, portal 
+summary: Converged Systems Advisor を利用するには、環境を準備する必要があります。 
+---
+= 環境を準備
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Converged Systems Advisor を利用するには、環境を準備する必要があります。環境の準備では、構成のサポート状況を確認し、ネットアップサポートサイトのアカウントに登録します。
+
+必要に応じて、を実行します link:concept_architecture.html["Converged Systems Advisor の仕組みをご確認ください"] 始める前に
+
+.手順
+. でサポートを確認します http://mysupport.netapp.com/matrix["NetApp Interoperability Matrix Tool で確認できます"^]：
++
+.. Converged Systems Advisor が FlexPod コンバージドインフラをサポートしていることを確認します。
+.. Converged Systems Advisor エージェントに対してサポートされている VMware ESXi サーバがあることを確認します。
++
+帯域幅の使用量を最小限に抑えるために、 FlexPod コンバージドインフラと同じデータセンターにエージェントをインストールすることを推奨します。
+
+
+
+. エージェントをインストールするネットワークでコンポーネント間の接続が許可されていることを確認します。
++
+** エージェントは、設定データを収集できるように、各 FlexPod コンポーネントに接続する必要があります。
+** エージェントは、次のエンドポイントと通信するためにアウトバウンドインターネット接続も必要とします。
++
+*** csa.netapp.com
+*** docker.com
+*** Docker .io と入力します
+
+
+
+
+. にアクセスします https://mysupport.netapp.com["ネットアップサポートサイト"^] アカウントをお持ちでない場合は、アカウントに登録してください。
++
+エージェントの設定およびポータルへのアクセスには、ネットアップサポートサイトのアカウントが必要です。
+
+

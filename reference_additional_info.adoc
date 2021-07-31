@@ -1,0 +1,42 @@
+---
+sidebar: sidebar 
+permalink: reference_additional_info.html 
+keywords: help, technical report, tr, 4036, best practices, imt, interoperability matrix, community, forum, docs, documentation, copyrights, notice 
+summary: Converged Systems Advisor に関するさまざまなリソースを活用して、サポートや詳細情報を確認できます。 
+---
+= ヘルプを参照したり、詳細情報を参照したりするには
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Converged Systems Advisor に関するさまざまなリソースを活用して、サポートや詳細情報を確認できます。
+
+* https://www.netapp.com/us/media/ds-3896.pdf["Converged Systems Advisor のデータシート"^]
++
+Converged Systems Advisor が提供する価値の詳細については、こちらをご覧ください。
+
+* https://www.netapp.com/us/media/tr-4036.pdf["ネットアップテクニカルレポート 4036 ：『 FlexPod Datacenter Technical Specifications 』"^]
++
+Converged Systems Advisor が構成を比較する際のベストプラクティスとファームウェア要件を確認します。
+
+* http://mysupport.netapp.com/matrix["NetApp Interoperability Matrix Tool で確認できます"^]
++
+構成がサポートされていることを確認します
+
+* http://community.netapp.com["ネットアップコミュニティ"^]
++
+同僚とつながり、質問をしたり、アイデアを交換したり、リソースを見つけたり、ベストプラクティスを共有したりします。
+
+* http://docs.netapp.com["ネットアップの製品マニュアル"^]
++
+手順、リソース、回答については、ネットアップの製品マニュアルを参照してください。
+
+* https://mysupport.netapp.com/portal["サポートケースをオープンします"]
++
+サポートケースをオープンして、追加のサポートを受けることができます。サポートケースは、 * Cat1 -> リモート診断ツール * および * Cat2 -> Converged System Advisor * で開く必要があります。
+
+

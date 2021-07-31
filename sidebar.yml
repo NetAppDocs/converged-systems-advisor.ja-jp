@@ -1,0 +1,58 @@
+---
+entries:
+- title: Converged Systems Advisor のドキュメント
+  url: "/index.html"
+- title: リリースノート
+  entries:
+  - title: 新機能
+    url: "/reference_new.html"
+  - title: 新機能のアーカイブ
+    url: "/reference_archive.html"
+  - title: 既知の問題
+    url: "/reference_issues.html"
+- title: 概念
+  entries:
+  - title: 概要
+    url: "/concept_overview.html"
+  - title: アーキテクチャ
+    url: "/concept_architecture.html"
+  - title: ライセンス
+    url: "/concept_licensing.html"
+  - title: セキュリティ
+    url: "/concept_security.html"
+  - title: ユーザロール
+    url: "/reference_user_roles.html"
+- title: はじめに
+  entries:
+  - title: クイックスタート
+    url: "/task_quick_start.html"
+  - title: 環境を準備
+    url: "/task_prepare_environment.html"
+  - title: FlexPod デバイスのアカウントを作成します
+    url: "/task_create_accounts_flexpod_devices.html"
+  - title: エージェントをセットアップして配備します
+    url: "/task_setup_deploy_agent.html"
+  - title: ポータルにインフラストラクチャを追加します
+    url: "/task_add_infrastructure.html"
+  - title: 通知を設定する
+    url: "/task_configure_notifications.html"
+  - title: エージェントに静的 IP を設定します
+    url: "/task_setting_static_ip.html"
+- title: インフラを監視する
+  entries:
+  - title: インフラの歴史を確認
+    url: "/task_review_infrastructure_history.html"
+  - title: ルールを監視する
+    url: "/task_monitor_rules.html"
+  - title: レポートを生成します
+    url: "/task_generate_reports.html"
+  - title: サポート契約の追跡
+    url: "/task_track_contracts.html"
+- title: パートナーとリセラーの導入を検証します
+  url: "/task_deployment_validation_partners_resellers.html"
+- title: トラブルシューティング
+  url: "/task_troubleshooting.html"
+- title: 関連リンク
+  url: "/reference_additional_info.html"
+- title: 法的通知
+  url: "/reference_legal_notices.html"

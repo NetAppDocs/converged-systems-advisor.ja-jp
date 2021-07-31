@@ -1,0 +1,80 @@
+---
+sidebar: sidebar 
+permalink: task_troubleshooting.html 
+keywords: troubleshoot, agent, connectivity, browser, discover, error, internet, connection 
+summary: Converged Systems Advisor の使用中に問題が発生した場合は、次の情報を使用すると問題を解決できます。 
+---
+= Converged Systems Advisor のトラブルシューティングを行う
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Converged Systems Advisor の使用中に問題が発生した場合は、次の情報を使用すると問題を解決できます。
+
+
+
+== Web ブラウザからエージェントに接続することはできません
+
+FlexPod デバイスの検出を設定するには、 Web ブラウザを使用してエージェントに接続する必要があります。Web ブラウザから接続できない場合は、エージェントが csa.netapp.com へのアウトバウンドインターネット接続を確立していることを確認してください。エージェントアプリケーションはインターネット接続なしで起動できないため、 Web インターフェイスにアクセスできません。
+
+インターネットアクセスにプロキシサーバが必要な場合は、 link:task_getting_started.html#setting-up-networking-for-the-agent["エージェント仮想マシンを使用するように構成します"]。
+
+
+
+== エージェントはデバイスを検出できません
+
+エージェントが FlexPod デバイスを検出できない場合は、次の点を確認してください。
+
+* エージェントが各 FlexPod デバイスに接続されていることを確認します。
++
+確認するには、エージェントから各デバイスに ping を実行します。
+
+* ローカルネットワークが 172.17.x.x サブネットを使用しているかどうかを確認します。
++
+エージェントは、 172.17.x.x サブネットを内部的に使用します。ローカルネットワークが同じサブネットを使用している場合は、エージェント上のサブネットを変更する必要があります。
+
++
+.. エージェントの仮想マシンコンソールにログインします。
++
+デフォルトのユーザ名は「 CSA 」で、デフォルトのパスワードは「 netapp 」です。ログイン後にデフォルトパスワードを変更する必要があります。
+
+.. 次の内容で /etc/dockerdocker/daemon.json ファイルを追加します。
++
+....
+{ "bip": "172.44.x.x"}
+....
++
+BIP アドレスには、競合しない IP アドレスを使用できます。172 の範囲にある必要はありません。
+
+.. 仮想マシンをリブートします。
+
+
+
+
+
+
+== SSH を使用してエージェント VM に接続できません
+
+エージェント VM の SSH はデフォルトでは無効になっています。
+
+* SSH を開始するには、 vCenter のコンソールからエージェント VM にログインし、次のコマンドを実行します。
++
+'UDO su `systemctl start ssh`
+
+* SSH が有効になっているかどうかを確認するには、次のコマンドを実行します。
++
+'systemctl is -enabled ssh'
+
+* エージェント VM の SSH のステータスを確認するには、次のコマンドを実行します。
++
+'systemctl status ssh'
+
+* リブート後も SSH が維持されるようにするには、次のコマンドを実行します。
++
+'UDO su `systemctl enable ssh`
+
+

@@ -1,0 +1,65 @@
+---
+sidebar: sidebar 
+permalink: task_quick_start.html 
+keywords: quick start, overview, deploying, getting started, get started, configuring 
+summary: Converged Systems Advisor エージェントとポータルの使用を開始するには、いくつかの手順を実行します。 
+---
+= Converged Systems Advisor のクイックスタート
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Converged Systems Advisor エージェントと FlexPod 用ポータルの使用を開始するには、いくつかの手順を実行します。
+
+
+
+==== 環境を準備
+
+[role="quick-margin-para"]
+構成がサポートされていることを確認します link:task_prepare_environment.html["環境を準備"]。
+
+
+
+==== FlexPod デバイスでアカウントを作成します
+
+[role="quick-margin-para"]
+Cisco UCS Manager 、 Cisco Nexus スイッチ、 ONTAP システム、 VMware 、 APIC でアカウントを設定します。これらのアカウントは、エージェントが設定データを収集するために使用します。link:task_create_accounts_flexpod_devices.html["FlexPod デバイスでアカウントを作成します"]。
+
+
+
+==== TACACS+ サーバを使用して CSA ユーザ権限を付与します
+
+[role="quick-margin-para"]
+TACACS+ サーバを使用するユーザは、スイッチに CSA ユーザ権限を付与し、ユーザ権限グループを作成して、 CSA が必要とする特定のセットアップコマンドへのグループアクセスを許可する必要があります。link:task_grant_user_privileges.html["TACACS+ サーバを使用して CSA ユーザ権限を付与します"]
+
+
+
+==== エージェントをセットアップして配備します
+
+[role="quick-margin-para"]
+VMware ESXi サーバに Converged Systems Advisor エージェントを導入エージェントは、 FlexPod コンバージドインフラ内の各デバイスに関する構成データを収集し、そのデータを Converged Systems Advisor ポータルに送信します。link:task_setup_deploy_agent.html["エージェントを展開します"]。
+
+
+
+==== ポータルでインフラを追加 / 共有します
+
+[role="quick-margin-para"]
+各 FlexPod デバイスを Converged Systems Advisor ポータルに追加して、監視可能なインフラ全体を作成します。コンバージドインフラを共有して、別のユーザがポータルにログインして設定を表示および監視できるようにすることもできます。link:task_add_infrastructure.html["ポータルでインフラを追加して共有します"]。
+
+
+
+==== 通知を設定する
+
+[role="quick-margin-para"]
+Premium ライセンスでは、 FlexPod インフラの変更を通知する通知を E メールで設定できます。link:task_configure_notifications.html["通知を設定する"]
+
+
+
+==== 静的 IP アドレスを設定します
+
+[role="quick-margin-para"]
+DHCP サーバがない環境では、 Converged Systems Advisor エージェントに静的 IP アドレスを設定します。link:task_setting_static_ip.html["エージェントに静的 IP アドレスを設定します"]

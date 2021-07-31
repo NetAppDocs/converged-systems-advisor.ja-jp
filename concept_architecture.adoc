@@ -1,0 +1,27 @@
+---
+sidebar: sidebar 
+permalink: concept_architecture.html 
+keywords: architecture, diagram, components, flexpod, agent, portal, cloud, on premise 
+summary: Converged Systems Advisor は、オンプレミスのエージェントとクラウドベースのポータルで構成されるソフトウェアサービス（ SaaS ）プラットフォームです。 
+---
+= Converged Systems Advisor の仕組み
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Converged Systems Advisor は、オンプレミスのエージェントとクラウドベースのポータルで構成されるソフトウェアサービス（ SaaS ）プラットフォームです。
+
+次の図は、 Converged Systems Advisor のコンポーネント間の関係を示しています。
+
+image:diagram_architecture.gif["データセンターにインストールされている FlexPod and Converged Systems Advisor エージェントとクラウドベースのポータルを示す概念図。"]
+
+. オンプレミスにある Converged Systems Advisor エージェントは、指定したクレデンシャルを使用して FlexPod コンバージドインフラから構成データを収集します。
+. エージェントが Converged Systems Advisor ポータルにデータを送信します。
+. ユーザは、 Web ブラウザを使用して Converged Systems Advisor ポータルにログインし、 FlexPod コンバージドインフラの検証、監視、最適化を行います。
+
+
+link:concept_security.html["Converged Systems Advisor がデータを安全に保護する方法をご確認ください"]。

@@ -1,0 +1,74 @@
+---
+sidebar: sidebar 
+permalink: task_add_infrastructure.html 
+keywords: add, infrastructure, FlexPod, configuration, Cisco, ACI, UCS, server, FlexPod, converged, infrastructure, sharing, portal 
+summary: ポータルにインフラストラクチャを追加します。 
+---
+= ポータルにインフラストラクチャを追加します
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+エージェントを設定すると、各 FlexPod デバイスに関する情報が Converged Systems Advisor ポータルに送信されます。ここで、ポータル内の各コンポーネントを選択して、監視可能なインフラ全体を作成する必要があります。
+
+.手順
+. を参照してください https://csa.netapp.com/["Converged Systems Advisor ポータル"^]をクリックし、 [ インフラストラクチャの追加 ] をクリックします。
+. インフラを追加する手順を実行します。
++
+.. インフラの基本的な詳細を入力します。
++
+Cisco ACI インフラを追加する場合は、 FlexPod で Cisco UCS Manager を使用しているかどうかを尋ねられたら「 * yes * 」と入力し、 FlexPod に含まれているネットワーク構成のタイプを尋ねられたら ACI モード * で「 * Nexus switch 」と入力します。
+
+.. FlexPod 構成の一部である各デバイスを選択します。
++
+
+TIP: デバイスを選択すると、 [Eligibility ( 対象 )] 列に *Eligible ( 対象 ) * または *Not Eligible ( 対象外 )* と表示されます。デバイスが別のエージェントによって検出された場合、そのデバイスは使用できません。
+
+
+
+. 必要なコンポーネントをすべて選択したら、各デバイスタイプの横に緑色のチェックマークが表示されます。
++
+image:screenshot_add_infrastructure_pikesupdate.gif["表で選択されている 4 つのデバイスと、各デバイスの緑のチェックマークが表示されます。これは、必要なコンポーネントをすべて選択したことを示します。"]
+
++
+.. を追加します link:concept_licensing.html["Converged Systems Advisor のシリアル番号"] キー機能のロックを解除します。
+.. 概要を確認し、ライセンス契約の条項に同意して、 [ * インフラストラクチャの追加 * ] をクリックします。
+
+
++
+
+NOTE: パートナーまたはリセラーの場合は、ライセンスまたはシリアル番号の追加に関する手順を省略して、 [ * インフラストラクチャの追加 * ] をクリックします。
+
+
+
+Converged Systems Advisor はポータルにインフラを追加し、各デバイスに関する構成データの収集を開始します。エージェントがデバイスから情報を収集するまで数分待ちます。
+
+
+
+= 他のユーザーとインフラストラクチャを共有する
+
+コンバージドインフラを共有すると、別のユーザが Converged Systems Advisor ポータルにログインして構成を表示および監視できるようになります。インフラを共有するユーザには、が必要です https://mysupport.netapp.com["ネットアップサポートサイト"^] アカウント：
+
+.手順
+. Converged Systems Advisor ポータルで、「 * Settings 」アイコン * をクリックし、「 * Users 」をクリックします。
++
+image:screenshot_settings.gif["に、設定メニューを示します。このメニューには、ユーザページへのリンクが含まれています。"]
+
+. User テーブルから設定を選択します。
+. をクリックします image:screenshot_share_icon.gif["インフラを共有するためのアイコン。"] をクリックします。
+. 指定するユーザロールの横に、 E メールアドレスを 1 つ以上入力します。
++
+link:reference_user_roles.html["各ロールの違いを確認します"]。
+
++
+
+TIP: 1 つのフィールドに複数の E メールアドレスを入力するには、最初の E メールアドレスのあとに「 * Enter 」キーを押します。
+
+. [ 送信（ Send ） ] をクリックします。
+
+
+Converged Systems Advisor へのアクセス方法が記載された E メールが送信されます。

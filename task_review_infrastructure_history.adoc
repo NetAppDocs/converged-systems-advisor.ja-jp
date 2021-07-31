@@ -1,0 +1,40 @@
+---
+sidebar: sidebar 
+permalink: task_review_infrastructure_history.html 
+keywords: review, history, converged, infrastructure, configuration, resolve, issue, warnings, failures, collected, collections, data 
+summary: 失敗したルールに関するアラートを受け取ると、設定で変更された内容の履歴を確認して問題を解決できるようになります。 
+---
+= インフラの歴史を確認します
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+失敗したルールに関するアラートを受け取ると、設定で変更された内容の履歴を確認して問題を解決できるようになります。
+
+.手順
+. 統合インフラを選択
+. [ * 詳細 ]>[ 履歴 * ] をクリックします。
++
+image:screenshot_history_navigation.gif["履歴オプションを含む詳細メニューを表示します。"]
+
+. カレンダーの 1 日をクリックすると、各データ収集で特定された警告とエラーの数が表示されます。
++
+
+TIP: 1 日に表示される数字は、エージェントがデータを収集した回数に対応します。たとえば、デフォルトの収集間隔である 24 時間を使用している場合、 1 日に 1 回の収集が表示されます。
+
++
+次の図は、 27 日に収集された 1 つのデータを示しています。
+
++
+image:screenshot_history_status.gif["27 日に 1 と 1 の黄色の点が表示されます。"]
+
+. 収集されたデータの詳細を表示するには、収集の [CI ダッシュボードへ移動 ] をクリックします。
+. 必要に応じて、最後に警告またはエラーが検出されなかった時間の履歴を表示します。
++
+2 つの収集期間のデータを比較することで、変更内容を特定できます。
+
+

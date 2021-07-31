@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: task_configure_notifications.html 
+keywords: configure, Converged, Systems, Advisor, infrastructure, email, notifications, alert, portal, collection, failures, offline, agent, daily, alert, digest 
+summary: Premium ライセンスがある場合は、 Converged Systems Advisor から FlexPod インフラの変更に関するアラートを E メールで通知できます。 
+---
+= 通知を設定する
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Premium ライセンスがある場合は、 Converged Systems Advisor から FlexPod インフラの変更に関するアラートを E メールで通知できます。
+
+.手順
+. Converged Systems Advisor ポータルで、 * 設定アイコン * をクリックし、 * アラート設定 * をクリックします。
+. Premium ライセンスを持つ各コンバージドインフラについて、受け取る通知を確認します。
++
+各通知には次の情報が含まれます。
+
++
+収集の失敗:: Converged Systems Advisor がコンバージドインフラからデータを収集できない場合に警告します。
+オフラインエージェント:: Converged Systems Advisor エージェントがオンラインでない場合に通知します。
+日次アラートダイジェスト:: 前日に発生した失敗したルールに関するアラート。
+
+
+. [ 保存（ Save ） ] をクリックします。
+
+
+Converged Systems Advisor から、コンバージドインフラに関連付けられているユーザに E メール通知が送信されるようになりました。

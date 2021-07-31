@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: task_generate_reports.html 
+keywords: generate, report, reports, converged, infrastructure, health, inventory, assessment, deployment, validation, partners, issues, configured, configuration, interoperability, downloaded, PDF, email 
+summary: パートナーの健全性レポートや導入検証レポートなど、複数のタイプのレポートを生成できます。 
+---
+= レポートを生成します
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Premium ライセンスがある場合は、コンバージドインフラの現在のステータスに関する詳細（インベントリレポート、健全性レポート、評価レポート、パートナー向けの導入検証レポートなど）を記載したレポートをいくつか生成することができます。
+
+.手順
+. [*Reports*] をクリックします。
+. レポートを選択し、 * 生成 * をクリックします。
+. レポートのオプションを選択します。
++
+.. 統合インフラを選択
+.. 必要に応じて、最新のデータ収集から以前のデータ収集に変更します。
+.. レポートの表示方法をブラウザで選択するか、ダウンロードした PDF として表示するか、 E メールで表示するかを選択します。
++
+image:screenshot_reports_generate.gif["に、レポートを生成するためのオプションを示します。このオプションには、コンバージドインフラと Snapshot を選択し、表示方法を選択します。"]
+
+
+
+
+
+Converged Systems Advisor がレポートを生成
