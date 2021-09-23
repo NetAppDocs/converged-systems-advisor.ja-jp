@@ -55,9 +55,7 @@ TIP: デフォルトでは、新しいユーザはすべて読み取り専用で
 .. Save the configuration:
 ....
 +
-....
-copy running configuration startup configuration
-....
+ copy running configuration startup configuration
 
 
 TACACS+ サーバを使用していて、 CSA ユーザ権限を付与する必要がある場合は、に進みます link:task_grant_user_privileges.html["TACACS+ サーバを使用した CSA ユーザ権限の付与"]。

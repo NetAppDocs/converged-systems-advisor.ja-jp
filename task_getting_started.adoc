@@ -82,20 +82,14 @@ TIP: デフォルトでは、新しいユーザはすべて読み取り専用で
 . SSH または Telnet を使用して各 Nexus スイッチにログインします。
 . グローバルコンフィギュレーションモードを開始します。
 +
-....
-configure terminal
-....
+ configure terminal
 +
 .. 新しいユーザを作成します。
 +
-....
-username [name] password [password] role [role]
-....
+ username [name] password [password] role [role]
 .. 設定を保存します。
 +
-....
-copy running configuration startup configuration
-....
+ copy running configuration startup configuration
 
 
 
@@ -249,9 +243,7 @@ image:screenshot_http_proxy.gif["HTTP プロキシプロンプトを示すスク
 
 . エージェントから次の CLI コマンドを実行して、接続を確認します。
 +
-....
-curl -k https://www.netapp.com/us/index.aspx
-....
+ curl -k https://www.netapp.com/us/index.aspx
 +
 コマンドが失敗した場合は、 DNS 設定を確認します。エージェント仮想マシンには、有効な DNS 設定があり、 csa.netapp.com にアクセスできる必要があります。
 
