@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>converged-systems-advisor</title>
+    <atom:link href="https://docs.netapp.com/ja-jp/converged-systems-advisor/feed.xml" rel="self" type="application/rss+xml"/>
+    <link>https://docs.netapp.com/ja-jp/converged-systems-advisor</link>
+    <description>The latest updates from NetApp Cloud Docs</description>
+    <language>ja-jp</language>
+    <ttl>60</ttl>
+    <pubDate>Tue, 16 Nov 2021 07:50:37 +0000</pubDate>
+    <lastBuildDate>Tue, 16 Nov 2021 07:50:37 +0000</lastBuildDate>
+    
+    
+    
+    <item>
+      <title>Converged Systems Advisor の新機能 (31 Jul 2021)</title>
+      <pubDate>Sat, 31 Jul 2021 04:22:38 +0000</pubDate>
+      <link>https://docs.netapp.com/ja-jp/converged-systems-advisor/reference_new.html?time=1627705358</link>
+      <guid isPermaLink="false">Sat, 31 Jul 2021 04:22:38 +0000</guid>
+      <description><![CDATA[ ネットアップでは、 Converged Systems Advisor を定期的に更新して、新機能、拡張機能、バグ修正を提供しています。 ]]></description>
+    </item>
+    
+    
+  </channel>
+</rss>
