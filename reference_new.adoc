@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: reference_new.html 
-keywords: new, features, what's new, enhancements, release notes 
+keywords: 'new, features, what"s new, enhancements, release notes' 
 summary: ネットアップでは、 Converged Systems Advisor を定期的に更新して、新機能、拡張機能、バグ修正を提供しています。 
 ---
 = Converged Systems Advisor の新機能
