@@ -6,6 +6,7 @@ summary: ポータルにインフラストラクチャを追加します。
 ---
 = ポータルにインフラストラクチャを追加します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

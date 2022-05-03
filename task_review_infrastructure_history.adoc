@@ -6,6 +6,7 @@ summary: 失敗したルールに関するアラートを受け取ると、設�
 ---
 = インフラの歴史を確認します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

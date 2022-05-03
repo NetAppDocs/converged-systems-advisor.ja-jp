@@ -6,6 +6,7 @@ summary: ネットアップのパートナー様は、導入の検証を実行�
 ---
 = パートナー様向けの導入検証レポート
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

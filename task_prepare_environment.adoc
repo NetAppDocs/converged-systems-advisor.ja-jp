@@ -6,6 +6,7 @@ summary: Converged Systems Advisor を利用するには、環境を準備する
 ---
 = 環境を準備
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

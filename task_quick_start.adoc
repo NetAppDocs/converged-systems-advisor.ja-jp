@@ -6,6 +6,7 @@ summary: Converged Systems Advisor エージェントとポータルの使用を
 ---
 = Converged Systems Advisor のクイックスタート
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

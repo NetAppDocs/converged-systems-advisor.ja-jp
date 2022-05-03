@@ -6,6 +6,7 @@ summary: コンバージドインフラを別のユーザと共有する場合�
 ---
 = ユーザロール
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

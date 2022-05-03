@@ -6,6 +6,7 @@ summary: Converged Systems Advisor の使用中に問題が発生した場合は
 ---
 = Converged Systems Advisor のトラブルシューティングを行う
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

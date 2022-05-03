@@ -6,6 +6,7 @@ summary: ここでは、サービスの正常な使用を妨げる可能性が�
 ---
 = 既知の問題
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -6,6 +6,7 @@ summary: Premium ライセンスがある場合は、 Converged Systems Advisor 
 ---
 = 通知を設定する
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

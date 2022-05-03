@@ -6,6 +6,7 @@ summary: パートナーの健全性レポートや導入検証レポートな�
 ---
 = レポートを生成します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

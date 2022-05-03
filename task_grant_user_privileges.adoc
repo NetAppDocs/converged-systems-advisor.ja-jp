@@ -6,6 +6,7 @@ summary: TACACS+ サーバを使用していて、スイッチに CSA ユーザ�
 ---
 = TACACS+ サーバを使用して CSA ユーザ権限を付与します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

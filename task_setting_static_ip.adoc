@@ -6,6 +6,7 @@ summary: DHCP サーバがない環境では、 Converged Systems Advisor エー
 ---
 = エージェントに静的 IP アドレスを設定します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

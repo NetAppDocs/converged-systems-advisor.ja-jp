@@ -6,6 +6,7 @@ summary: 構成内の各デバイスのサポート契約の詳細を、開始�
 ---
 = サポート契約の追跡
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

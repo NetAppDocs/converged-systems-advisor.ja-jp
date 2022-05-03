@@ -6,6 +6,7 @@ summary: 失敗したルールの修正、ルールの抑制、抑制された�
 ---
 = インフラストラクチャ内のルールを監視します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

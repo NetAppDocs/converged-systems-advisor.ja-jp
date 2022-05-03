@@ -6,6 +6,7 @@ summary: Converged Systems Advisor は、オンプレミスのエージェント
 ---
 = Converged Systems Advisor の仕組み
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

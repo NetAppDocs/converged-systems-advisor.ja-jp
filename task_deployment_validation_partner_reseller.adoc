@@ -6,6 +6,7 @@ summary: パートナー様やリセラー様は、お客様のインフラの�
 ---
 = パートナーとリセラーの導入を検証します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

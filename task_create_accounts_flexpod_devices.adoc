@@ -6,6 +6,7 @@ summary: 開始するには、 FlexPod デバイスのアカウントを設定�
 ---
 = FlexPod デバイスのアカウントを作成します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

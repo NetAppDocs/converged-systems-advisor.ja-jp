@@ -6,6 +6,7 @@ summary: Converged Systems Advisor の機能をロック解除するにはライ
 ---
 = ライセンス
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
