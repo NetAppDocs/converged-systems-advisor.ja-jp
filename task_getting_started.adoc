@@ -46,7 +46,7 @@ Converged Systems Advisor を利用するには、環境を準備し、エージ
 
 
 
-. <<Creating accounts on FlexPod devices,各 FlexPod コンポーネントでアカウントを作成します>>。
+.  accounts on FlexPod devices,各 FlexPod コンポーネントでアカウントを作成します。
 +
 エージェントは、構成データを収集するためにクレデンシャルを必要としますエージェントの設定時にクレデンシャルを指定する必要があります。
 
@@ -95,7 +95,7 @@ TIP: デフォルトでは、新しいユーザはすべて読み取り専用で
 
 
 
-TACACS+ サーバを使用していて、 CSA ユーザ権限を付与する必要がある場合は、に進みます <<Granting CSA user privileges using a TACACS+ server>>。
+TACACS+ サーバを使用していて、 CSA ユーザ権限を付与する必要がある場合は、に進みます  CSA user privileges using a TACACS+ server。
 
 
 
@@ -159,10 +159,10 @@ image:screenshot_system_manager_add_user.gif["に、 System Manager の Add User
 VMware ESXi サーバに Converged Systems Advisor エージェントを導入する必要があります。エージェントは、 FlexPod コンバージドインフラ内の各デバイスに関する構成データを収集し、そのデータを Converged Systems Advisor ポータルに送信します。
 
 .手順
-. <<Downloading and installing the agent,エージェントをダウンロードしてインストールします>>
-. <<Setting up networking for the agent,エージェントのネットワークを設定します>>
-. <<Installing an SSL certificate on the agent,必要に応じて、エージェントに SSL 証明書をインストールします>>
-. <<Configuring the agent to discover your FlexPod infrastructure,FlexPod インフラストラクチャを検出するようにエージェントを設定します>>
+.  and installing the agent,エージェントをダウンロードしてインストールします
+.  up networking for the agent,エージェントのネットワークを設定します
+.  an SSL certificate on the agent,必要に応じて、エージェントに SSL 証明書をインストールします
+.  the agent to discover your FlexPod infrastructure,FlexPod インフラストラクチャを検出するようにエージェントを設定します
 
 
 

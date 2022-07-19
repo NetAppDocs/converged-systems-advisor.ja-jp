@@ -24,9 +24,9 @@ FlexPod コンポーネントが CSA エージェントによってサポート�
 
 このリリースには、次の拡張機能が含まれています
 
-* <<New functionality for storage change detection (diffs)>>
-* <<Expanded configuration assurance for cluster interconnect switches>>
-* <<Initial coverage of NVMe designs>>
+*  functionality for storage change detection (diffs)
+*  configuration assurance for cluster interconnect switches
+*  coverage of NVMe designs
 
 
 

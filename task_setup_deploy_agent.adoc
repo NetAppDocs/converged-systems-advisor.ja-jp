@@ -17,10 +17,10 @@ summary: VMware ESXi サーバに Converged Systems Advisor エージェント�
 VMware ESXi サーバに Converged Systems Advisor エージェントを導入する必要があります。エージェントは、 FlexPod コンバージドインフラ内の各デバイスに関する構成データを収集し、そのデータを Converged Systems Advisor ポータルに送信します。
 
 .手順
-. <<Download and install the agent>>
-. <<Set up networking for the agent>>
-. <<Install an SSL certificate on the agent>>
-. <<Configure the agent to discover your FlexPod infrastructure>>
+.  and install the agent
+.  up networking for the agent
+.  an SSL certificate on the agent
+.  the agent to discover your FlexPod infrastructure
 
 
 

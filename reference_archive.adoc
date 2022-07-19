@@ -24,14 +24,14 @@ FlexPod コンポーネントが CSA エージェントによってサポート�
 
 このアーカイブには、次のリリースの情報が含まれています。
 
-* <<30 April 2020>>
-* <<3 February 2020>>
-* <<7 November 2019>>
-* <<24 July 2019>>
-* <<25 April 2019>>
-* <<28 March 2019>>
-* <<17 January 2019>>
-* <<13 September 2018>>
+*  April 2020
+*  February 2020
+*  November 2019
+*  July 2019
+*  April 2019
+*  March 2019
+*  January 2019
+*  September 2018
 
 
 
@@ -40,10 +40,10 @@ FlexPod コンポーネントが CSA エージェントによってサポート�
 
 このリリースには、次の拡張機能が含まれています
 
-* <<Upgrade Advisor>>
-* <<Cluster interconnect switch>>
-* <<Capacity card enhancements>>
-* <<System diagram alerts>>
+*  Advisor
+*  interconnect switch
+*  card enhancements
+*  diagram alerts
 
 
 
@@ -98,7 +98,7 @@ UCS ブレードサーバ使用率のリンクから、コンピューティン�
 
 | https://mysupport.netapp.com/NOW/cgi-bin/bol?Type=Detail&Display=1253405["1253405"^] | Converged Systems Advisor に Nexus スイッチポートのステータスが誤って表示されることがあります。 
 |===
-* に戻ります <<Contents>>
+* に戻ります 
 
 
 
@@ -107,8 +107,8 @@ UCS ブレードサーバ使用率のリンクから、コンピューティン�
 
 このリリースには、次の拡張機能が含まれています
 
-* <<Navigation enhancements>>
-* <<Aggregate details>>
+*  enhancements
+*  details
 
 
 
@@ -145,7 +145,7 @@ image:screenshot_redcloud_new-aggregate_details.gif["スクリーンショット
 
 | https://mysupport.netapp.com/NOW/cgi-bin/bol?Type=Detail&Display=1279956["1279956"^] | 1 つのノードの MetroCluster で、クラスタの詳細ページの概要とルールの概要に IOXM 拡張モジュールが表示されない。 
 |===
-* に戻ります <<Contents>>
+* に戻ります 
 
 
 
@@ -157,9 +157,9 @@ NOTE: このリリースの新機能と機能拡張は、 Converged Systems Advi
 
 このリリースには、次の新機能と機能拡張が含まれています。
 
-* <<MetroCluster awareness>>
-* <<NVMe awareness>>
-* <<Improved interoperability functionality>>
+*  awareness
+*  awareness
+*  interoperability functionality
 
 
 
@@ -180,7 +180,7 @@ Converged Systems Advisor は、分析を実行して ONTAP 9.4 以降でサポ�
 
 Converged Systems Advisor には最新の相互運用性カードがあり、各コンポーネントでサポートされている最新バージョン、最新バージョンがポップアップにリンクされます。ポップアップに新しいレポートが追加され、コンポーネント階層ごとに個別の相互運用性レポートが表示されるようになりました。
 
-* に戻ります <<Contents>>
+* に戻ります 
 
 
 
@@ -189,8 +189,8 @@ Converged Systems Advisor には最新の相互運用性カードがあり、各
 
 このリリースには、次の新機能と機能拡張が含まれています。
 
-* <<Support for Cisco ACI in FlexPod>>
-* <<Support for multiple clusters in a single FlexPod>>
+*  for Cisco ACI in FlexPod
+*  for multiple clusters in a single FlexPod
 
 
 
@@ -205,7 +205,7 @@ Converged Systems Advisor は、 Cisco ACI ネットワーキングで FlexPod �
 
 Converged Systems Advisor は、 1 つの FlexPod で複数のクラスタをサポートするようになりました。すべてのクラスタで Storage ONTAP ルールが処理され、システム図にすべてのクラスタが反映されます。
 
-* に戻ります <<Contents>>
+* に戻ります 
 
 
 
@@ -214,8 +214,8 @@ Converged Systems Advisor は、 1 つの FlexPod で複数のクラスタをサ
 
 このリリースには、次の新機能と機能拡張が含まれています。
 
-* <<Automatically resolving failed rules>>
-* <<Displaying suppressed rules>>
+*  resolving failed rules
+*  suppressed rules
 
 
 
@@ -252,7 +252,7 @@ Converged Systems Advisor は、原因が特定のルールで失敗した問題
 
 | https://mysupport.netapp.com/NOW/cgi-bin/bol?Type=Detail&Display=1211999["1211999"^] | スペースリザベーションステータスが正しく表示されません 
 |===
-* に戻ります <<Contents>>
+* に戻ります 
 
 
 
@@ -277,7 +277,7 @@ Converged Systems Advisor は、原因が特定のルールで失敗した問題
 
 | https://mysupport.netapp.com/NOW/cgi-bin/bol?Type=Detail&Display=1212001["1212001"] | ラックマウント型サーバの電源装置情報が CSA で正しく表示されないことがあります 
 |===
-* に戻ります <<Contents>>
+* に戻ります 
 
 
 
@@ -286,11 +286,11 @@ Converged Systems Advisor は、原因が特定のルールで失敗した問題
 
 このリリースには、次の新機能と機能拡張が含まれています。
 
-* <<Support for new FlexPod devices>>
-* <<Detailed information about hosts and virtual machines>>
-* <<Simplified experience when adding an infrastructure>>
-* <<Device import using a file>>
-* <<Integration with NetApp Active IQ>>
+*  for new FlexPod devices
+*  information about hosts and virtual machines
+*  experience when adding an infrastructure
+*  import using a file
+*  with NetApp Active IQ
 
 
 
@@ -361,7 +361,7 @@ image:screenshot_active_iq.gif["スクリーンショット、幅 = 65% 、位�
 
 | 2794. | 仮想マシンに VMware ツールがインストールされていないにもかかわらず、「 VMware tools check 」というルールには「 Pass 」と表示されます。 
 |===
-* に戻ります <<Contents>>
+* に戻ります 
 
 
 

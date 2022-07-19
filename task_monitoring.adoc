@@ -37,7 +37,7 @@ image:screenshot_rules_information.gif["概要、影響、解決策など、ル�
 
 . 解像度の指示に従って、問題を修正します。
 +
-必要に応じて、 <<Reviewing the history for an infrastructure,設定履歴を確認します>> をクリックしてください。問題
+必要に応じて、  the history for an infrastructure,設定履歴を確認します をクリックしてください。問題
 
 
 
