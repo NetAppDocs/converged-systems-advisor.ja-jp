@@ -56,4 +56,5 @@ image:screenshot_collect_button.gif["は、右上にある収集ボタンです�
 . 最終的な Deployment Validation Report をお客様に送信します。
 
 
+.結果
 統合インフラがベストプラクティスに従ってセットアップされます。

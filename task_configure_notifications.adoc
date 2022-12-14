@@ -31,4 +31,5 @@ Premium ライセンスがある場合は、 Converged Systems Advisor から Fl
 . [ 保存（ Save ） ] をクリックします。
 
 
+.結果
 Converged Systems Advisor から、コンバージドインフラに関連付けられているユーザに E メール通知が送信されるようになりました。

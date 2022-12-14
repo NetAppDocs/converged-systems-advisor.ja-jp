@@ -18,7 +18,7 @@ NetApp Converged Systems Advisor は、 FlexPod コンバージドインフラ�
 
 
 
-== 新機能をご紹介します
+== 最新情報をご確認ください
 
 link:reference_new.html["Converged Systems Advisor の新機能"]
 

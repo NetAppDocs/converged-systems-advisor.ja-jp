@@ -483,7 +483,6 @@
   <block id="571a926cd2e7deab39daf05b2533b8d8" category="doc">インフラの歴史を確認します</block>
   <block id="7a49965d9cfff28dae6c97f9b420a932" category="summary">NetApp Converged Systems Advisor は、 FlexPod コンバージドインフラの導入を検証、監視、最適化し、ビジネスアプリケーションに最適なパフォーマンスと可用性を確保します。</block>
   <block id="04fbad68af42342b74d64c44c053aeb6" category="doc">Converged Systems Advisor</block>
-  <block id="1fde0727b387439572ade83eecff4f68" category="section-title">新機能をご紹介します</block>
   <block id="9019b4a8afd649f588dde381d9d2c1cb" category="inline-link-macro">Converged Systems Advisor の新機能</block>
   <block id="cfaf20a40a53abf04e998d745a541106" category="paragraph"><block ref="cfaf20a40a53abf04e998d745a541106" category="inline-link-macro-rx"></block></block>
   <block id="be11c74c1dd7f307bb80183a90dc2067" category="section-title">はじめに</block>
@@ -695,17 +694,14 @@
   <block id="d765707c3b28b87a0166a122e0893c44" category="doc">Converged Systems Advisor のクイックスタート</block>
   <block id="bb4e793023539d2e73eea517a0009f8f" category="paragraph">Converged Systems Advisor エージェントと FlexPod 用ポータルの使用を開始するには、いくつかの手順を実行します。</block>
   <block id="861d7392cf2a3c7ca2ed1442f6237101" category="paragraph">構成がサポートされていることを確認します <block ref="5db18581d3c751db9049195c8f5e0955" category="inline-link-macro-rx"></block>。</block>
-  <block id="005c54fa8a7e7bd788a9d809d1387a85" category="section-title">FlexPod デバイスでアカウントを作成します</block>
   <block id="2f166ccfcdb92d24539f300510b6c06a" category="inline-link-macro">FlexPod デバイスでアカウントを作成します</block>
   <block id="ef53b42f68445a3ad4051becb0f15d0a" category="paragraph">Cisco UCS Manager 、 Cisco Nexus スイッチ、 ONTAP システム、 VMware 、 APIC でアカウントを設定します。これらのアカウントは、エージェントが設定データを収集するために使用します。<block ref="3431097fc9e072fa942c7d7d18ec5a22" category="inline-link-macro-rx"></block>。</block>
   <block id="2c1c5cb63f66b3d5b5f4eeb79a858979" category="paragraph">TACACS+ サーバを使用するユーザは、スイッチに CSA ユーザ権限を付与し、ユーザ権限グループを作成して、 CSA が必要とする特定のセットアップコマンドへのグループアクセスを許可する必要があります。<block ref="4c9d56d5e4670c50abdba1f72cb4866c" category="inline-link-macro-rx"></block></block>
   <block id="c0fb3c98adaf760968c2a76d78a5b482" category="inline-link-macro">エージェントを展開します</block>
   <block id="0550cf7fd37a5b054ce87062df5f3254" category="paragraph">VMware ESXi サーバに Converged Systems Advisor エージェントを導入エージェントは、 FlexPod コンバージドインフラ内の各デバイスに関する構成データを収集し、そのデータを Converged Systems Advisor ポータルに送信します。<block ref="96f9770b130e3bbf775f182c9ade7098" category="inline-link-macro-rx"></block>。</block>
-  <block id="0d68d2879e160e76749e7cf93c2fa146" category="section-title">ポータルでインフラを追加 / 共有します</block>
   <block id="19262993c294a1c73c8ae843e52a78f8" category="inline-link-macro">ポータルでインフラを追加して共有します</block>
   <block id="98e6f4726c519b5915a8c7eda3e7406d" category="paragraph">各 FlexPod デバイスを Converged Systems Advisor ポータルに追加して、監視可能なインフラ全体を作成します。コンバージドインフラを共有して、別のユーザがポータルにログインして設定を表示および監視できるようにすることもできます。<block ref="8650b55bc84e39256db0ba998f0a5b40" category="inline-link-macro-rx"></block>。</block>
   <block id="68b25f35698ade6b2d3fe83dec7cf861" category="paragraph">Premium ライセンスでは、 FlexPod インフラの変更を通知する通知を E メールで設定できます。<block ref="ebe1a4d3225f5bb69764eba03129edce" category="inline-link-macro-rx"></block></block>
-  <block id="b44a488d2f5dc6040330205f250e7850" category="section-title">静的 IP アドレスを設定します</block>
   <block id="db15846e3abf8485dbf81a496e64d90a" category="paragraph">DHCP サーバがない環境では、 Converged Systems Advisor エージェントに静的 IP アドレスを設定します。<block ref="708dd38422a6a2d257990b66f3dbd251" category="inline-link-macro-rx"></block></block>
   <block id="ade2db7ff69f464a3b4134ab103d943b" category="summary">Converged Systems Advisor は、オンプレミスのエージェントとクラウドベースのポータルで構成されるソフトウェアサービス（ SaaS ）プラットフォームです。</block>
   <block id="77a689c1bae0e53995786b80a8e17081" category="doc">Converged Systems Advisor の仕組み</block>
@@ -777,4 +773,21 @@
   <block id="f6bd0d7447ff66cc6b859603a88fbde9" category="sidebar">関連リンク</block>
   <block id="5a78e583f1007c774adcf85474a63773" category="doc">Converged Systems Advisor の新機能</block>
   <block id="f22b831ba6d141bbc230c57682a06371" category="doc">「 Converged Systems Advisor の新機能」のアーカイブ</block>
+  <block id="bd965e38a0c9cf27aa1bde099308e23f" category="paragraph-title">完了後</block>
+  <block id="8eea62084ca7e541d918e823422bd82e" category="paragraph-title">結果</block>
+  <block id="6e5bc02812454d72aa1b3361bc2f6c73" category="inline-image-macro">番号 1</block>
+  <block id="559f8475e1ff74d0a5b077794558916f" category="section-title"><block ref="dc5de6e35d5028cc4c0b89b89e621258" category="inline-image-macro-rx" type="image"></block> 環境を準備</block>
+  <block id="3db14b7ee6183c9d58f1e9d5e8e63efd" category="inline-image-macro">番号 2</block>
+  <block id="bc83ea51badfd0910cc8d7bae37d8acd" category="section-title"><block ref="8a21168e601d45e544969f8d2c358917" category="inline-image-macro-rx" type="image"></block> FlexPod デバイスでアカウントを作成します</block>
+  <block id="9f3ebc84fe13f3200262a9c4b7c9807d" category="inline-image-macro">番号3.</block>
+  <block id="3e12ab5fae17206c542331228866ed0d" category="section-title"><block ref="436aa95806ef0877809848921c187b08" category="inline-image-macro-rx" type="image"></block> TACACS+ サーバを使用して CSA ユーザ権限を付与します</block>
+  <block id="86f188df3015051c771264e12c69d0e4" category="inline-image-macro">番号4.</block>
+  <block id="511da2848c80f269eb677e5a5710cbcd" category="section-title"><block ref="b0069e021ff5287a729b22bfea26bbe1" category="inline-image-macro-rx" type="image"></block> エージェントをセットアップして配備します</block>
+  <block id="5870ed875d2bc967928d9a48d0bcac54" category="inline-image-macro">番号5.</block>
+  <block id="3a9f59ee192096314f07968a153e54b2" category="section-title"><block ref="c76f59d4b1b742813df5111ab3a44f58" category="inline-image-macro-rx" type="image"></block> ポータルでインフラを追加 / 共有します</block>
+  <block id="efd2db6ed66cb68b1ef85f7fc95f01ef" category="inline-image-macro">数値6.</block>
+  <block id="000de680812539d81f6b9eb895793c90" category="section-title"><block ref="434171cc767ea1c526904692eaabbd08" category="inline-image-macro-rx" type="image"></block> 通知を設定する</block>
+  <block id="71bb2e8e85702bc6dc8fe49bc2ca2664" category="inline-image-macro">数値7.</block>
+  <block id="ec82488760b9c067f6a1effc164db7f9" category="section-title"><block ref="a30b4945ccf5eb8b859e8a3c07b0e494" category="inline-image-macro-rx" type="image"></block> 静的 IP アドレスを設定します</block>
+  <block id="492e5546e60705134bff8d7f80511a8d" category="section-title">最新情報をご確認ください</block>
 </blocks>

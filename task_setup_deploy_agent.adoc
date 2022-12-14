@@ -17,10 +17,10 @@ summary: VMware ESXi サーバに Converged Systems Advisor エージェント�
 VMware ESXi サーバに Converged Systems Advisor エージェントを導入する必要があります。エージェントは、 FlexPod コンバージドインフラ内の各デバイスに関する構成データを収集し、そのデータを Converged Systems Advisor ポータルに送信します。
 
 .手順
-.  and install the agent
-.  up networking for the agent
-.  an SSL certificate on the agent
-.  the agent to discover your FlexPod infrastructure
+. <<エージェントをダウンロードしてインストールします>>
+. <<エージェントのネットワークを設定します>>
+. <<エージェントに SSL 証明書をインストールします>>
+. <<FlexPod インフラストラクチャを検出するようにエージェントを設定します>>
 
 
 
@@ -29,6 +29,7 @@ VMware ESXi サーバに Converged Systems Advisor エージェントを導入�
 
 VMware ESXi サーバに Converged Systems Advisor エージェントを導入する必要があります。
 
+.このタスクについて
 帯域幅の使用量を最小限に抑えるには、 FlexPod 構成と同じデータセンターにある VMware ESXi サーバにエージェントをインストールする必要があります。エージェントは、各 FlexPod コンポーネントとインターネットに接続し、 HTTPS ポート 443 を使用して Converged Systems Advisor ポータルに設定データを送信できるようにする必要があります。
 
 エージェントは、 Open Virtualization Format （ OVF ）テンプレートから VMware vSphere 仮想マシンとして導入されます。このテンプレートは、 1 vCPU と 2 GB の RAM を持つ Debian ベースのものです（複数以上の FlexPod システムに必要な場合があります）。
@@ -116,6 +117,7 @@ HTTP プロキシを http://user:password@proxy-server:proxy-port` の形式で�
 
 仮想マシンの初回ブート時に、エージェントが自己署名証明書を作成します。必要に応じて、その証明書を削除して独自の SSL 証明書を使用できます。
 
+.このタスクについて
 Converged Systems Advisor は次の機能をサポートします。 * OpenSSL バージョン 1.0.1 以降と互換性のある暗号 * TLS 1.1 および TLS 1.2
 
 .手順
@@ -153,4 +155,5 @@ NOTE: お客様の代わりにライセンス版の CSA を導入するパート
 
 
 
+.結果
 FlexPod インフラストラクチャ内の各デバイスがチェックマーク付きで表に表示されます。image:screenshot_agent_configuration.gif["必要な各デバイスを [ ステータス ] 列に緑色のチェックマークで表示します。"]

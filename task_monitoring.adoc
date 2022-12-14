@@ -37,10 +37,11 @@ image:screenshot_rules_information.gif["概要、影響、解決策など、ル�
 
 . 解像度の指示に従って、問題を修正します。
 +
-必要に応じて、  the history for an infrastructure,設定履歴を確認します をクリックしてください。問題
+必要に応じて、 <<インフラの履歴を確認する,設定履歴を確認します>> をクリックしてください。問題
 
 
 
+.完了後
 指定したルールのステータスは、エージェントの次の収集期間の後に、「 Pass 」と表示されます。
 
 
@@ -86,6 +87,7 @@ Converged Systems Advisor を使用すると、ルールを抑制してダッシ
 
 たとえば、 Telnet を有効にすることは推奨されませんが、有効にする場合はルールを抑制できます。
 
+.このタスクについて
 通知を設定するには、 Premium ライセンスが必要です。
 
 .手順
@@ -101,6 +103,7 @@ image:screenshot_rules_suppress.gif["テーブルの上にアラートアイコ�
 
 TIP: アラートを有効にする場合は、同じ手順に従い、 * End Suppression * を選択します。
 
+.結果
 指定した期間は Converged Systems Advisor からルールについて通知されなくなり、ダッシュボードにルールが表示されなくなります。
 
 
@@ -122,6 +125,7 @@ image:screenshot_rules_suppress.gif["テーブルの上にアラートアイコ�
 . [* End Suppression （終了抑制） ] を選択し、 [* Submit （送信） ] をクリックします
 
 
+.結果
 選択したルールに対してアラートが有効になり、ルールがルールテーブルとダッシュボードに表示されます。
 
 
@@ -175,6 +179,7 @@ image:screenshot_reports_generate.gif["に、レポートを生成するため�
 
 
 
+.結果
 Converged Systems Advisor がレポートを生成
 
 
@@ -191,6 +196,7 @@ Converged Systems Advisor がレポートを生成
 . 構成内の各デバイスについて、上記の手順を繰り返します。
 
 
+.結果
 Converged Systems Advisor に、各デバイスのサポート契約の詳細が表示されるようになりました。有効なサポート契約と有効期限が切れているデバイスを簡単に確認できます。
 
 image:screenshot_support_contracts.gif["に、 4 つのサポート契約を示します。 1 つは期限切れで、もう 1 つは有効です。"]
