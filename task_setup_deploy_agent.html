@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head class="at-element-marker">
+  <title>エージェントをセットアップして展開します</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="エージェントをセットアップして展開します" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/ja-jp/converged-systems-advisor/task_setup_deploy_agent.html" />
+	<meta property="og:description" content="VMware ESXi サーバに Converged Systems Advisor エージェントを導入" />
+  <meta property="og:image" content="https://docs.netapp.com/ja-jp/converged-systems-advisor/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="VMware ESXi サーバに Converged Systems Advisor エージェントを導入">
+  <meta name="keywords" content=" setup, deploy, FlexPod, configuration, VMware, ESXi server, FlexPod, converged, infrastructure, data, agent"><!-- Icons -->
+  <link rel="icon" href="/ja-jp/converged-systems-advisor/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+
+  <!-- Combined CSS -->
+  <link rel="stylesheet" type="text/css" href="/ja-jp/converged-systems-advisor/css/ie-netappdocs.css">
+
+  
+  <link rel="stylesheet" href="/ja-jp/converged-systems-advisor/css/ie-landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/ja-jp/converged-systems-advisor/css/ie-tabbed-blocks.css" type="text/css">
+  <!-- Canonical url -->
+  <link rel="canonical" href="https://docs.netapp.com/ja-jp/converged-systems-advisor/task_setup_deploy_agent.html" />
+  <link rel="alternate" hreflang="x-default" href="https://docs.netapp.com/us-en/converged-systems-advisor/task_setup_deploy_agent.html" />
+  <link rel="alternate" hreflang="ja" href="https://docs.netapp.com/ja-jp/converged-systems-advisor/task_setup_deploy_agent.html" />
+  <link rel="alternate" hreflang="en" href="https://docs.netapp.com/us-en/converged-systems-advisor/task_setup_deploy_agent.html" />
+  <link rel="alternate" hreflang="ko" href="https://docs.netapp.com/ko-kr/converged-systems-advisor/task_setup_deploy_agent.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.netapp.com/zh-cn/converged-systems-advisor/task_setup_deploy_agent.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://docs.netapp.com/zh-tw/converged-systems-advisor/task_setup_deploy_agent.html" />
+  <link rel="alternate" hreflang="de" href="https://docs.netapp.com/de-de/converged-systems-advisor/task_setup_deploy_agent.html" />
+  <link rel="alternate" hreflang="es" href="https://docs.netapp.com/es-es/converged-systems-advisor/task_setup_deploy_agent.html" />
+  <link rel="alternate" hreflang="fr" href="https://docs.netapp.com/fr-fr/converged-systems-advisor/task_setup_deploy_agent.html" />
+  <link rel="alternate" hreflang="it" href="https://docs.netapp.com/it-it/converged-systems-advisor/task_setup_deploy_agent.html" />
+  <!-- Top level site integrations -->
+<script type="text/javascript" src="https://cdn.cookielaw.org/consent/72570c5c-fe30-465f-b0e0-b77f7fb4ae34/OtAutoBlock.js"></script>
+    <script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-document-language="true" data-domain-script="72570c5c-fe30-465f-b0e0-b77f7fb4ae34"></script>
+    <script type="text/javascript">function OptanonWrapper() { }</script>
+    <script type="text/plain" class="optanon-category-C0002" src="https://assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js"></script>
+    <script class="optanon-category-C0001">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.setAttributeNode(d.createAttribute('data-ot-ignore'));j.setAttribute('class','optanon-category-C0001');j.async=true;
+        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl+'';f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MD73T9M');</script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  
+  <script>
+    $(document).ready(function() {
+      const MASTHEAD_OFFSET = 65;
+      const SECTIONS = $("main h2, main h3");
+      // PAGE NAV - Init
+      if (SECTIONS.length == 0) {
+        // remove if there is no elements
+        /*
+        $("#ie-right-navbar").remove();
+        $("#ie-right-navbar-collapse").remove();
+        */
+      } else {
+        $(".page-nav-title").css('display', 'block');
+        for (var i = 0; i < SECTIONS.length; i++) {
+          var sectionId = $(SECTIONS[i]).attr('id');
+          var sectionName = $(SECTIONS[i]).text();
+          var subClass = $(SECTIONS[i]).is("h3") ? ' page-nav__sublink' : '';
+          $("#page-menu").append('<li class="page-nav-item"><a href="#' + sectionId + '" class="page-nav__link' + subClass + '">' + sectionName + '</a></li>');
+        }
+        $(".page-nav__link").first().addClass('page-nav__link--active');
+      }
+    });
+  </script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/ja-jp/converged-systems-advisor/js/na-search.js'></script><script src='/ja-jp/converged-systems-advisor/js/ie-clouddocs.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><script>
+    /*
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+      */
+  </script>
+  <script src='/ja-jp/converged-systems-advisor/js/custom-dropdown.js'></script>
+  <script src='/ja-jp/converged-systems-advisor/js/FileSaver.min.js'></script>
+  <script src='/ja-jp/converged-systems-advisor/js/jszip-utils.min.js'></script>
+  <script src='/ja-jp/converged-systems-advisor/js/jszip.min.js'></script><script src='/ja-jp/converged-systems-advisor/js/ie-pdf-ux.js'></script></head>
+
+
+  <body class role="document" data-flavor=""><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MD73T9M"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><div id="page" class="">
+      <div id="ie-phone-menu" class=""></div>
+      <div id="ie-content-wrap" class="">
+        <nav id="ie-new-header">
+    <ul>
+        <li id="ie-phone-menu-button">
+            <a href="#">
+                <image id="" src="/ja-jp/converged-systems-advisor/images/hamburger.svg" alt="menu" />
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.netapp.com/ja/">
+                <image id="ie-header-logo" src="/ja-jp/converged-systems-advisor/images/netapp_logo.svg" alt="netapp" />
+            </a>
+        </li>
+        <li id="ie-header-docs">
+            <a href="https://www.netapp.com/ja/support-and-training/documentation/">ドキュメント</a>
+        </li>
+
+        <!-- Empty container to push header left with or without lang selector -->
+        <li id="empty-container" style="margin-left: auto">
+        </li>
+        <!-- Start Language Selector --><li id="ie-language-dropdown">
+            <div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+                <div class="custom-dropdown-select custom-dropdown-select-lang">
+                    <img src="/ja-jp/converged-systems-advisor/images/language_white_24dp.svg" class="n-globe__icon" />
+                    <span class="lang-name">日本語</span>
+                    <img src="/ja-jp/converged-systems-advisor/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown header invisible" />
+                    <img src="/ja-jp/converged-systems-advisor/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup header" />
+                    </button>
+                </div>
+
+                <ul class="custom-dropdown-menu"><li>
+                        <a href="https://docs.netapp.com/ja-jp/converged-systems-advisor/task_setup_deploy_agent.html"
+                            target="_self"><span translate="no" class="notranslate">日本語</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/us-en/converged-systems-advisor/task_setup_deploy_agent.html"
+                            target="_self"><span translate="no" class="notranslate">English</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/ko-kr/converged-systems-advisor/task_setup_deploy_agent.html"
+                            target="_self"><span translate="no" class="notranslate">한국어</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/zh-cn/converged-systems-advisor/task_setup_deploy_agent.html"
+                            target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/zh-tw/converged-systems-advisor/task_setup_deploy_agent.html"
+                            target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/de-de/converged-systems-advisor/task_setup_deploy_agent.html"
+                            target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/es-es/converged-systems-advisor/task_setup_deploy_agent.html"
+                            target="_self"><span translate="no" class="notranslate">Español</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/fr-fr/converged-systems-advisor/task_setup_deploy_agent.html"
+                            target="_self"><span translate="no" class="notranslate">Français</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/it-it/converged-systems-advisor/task_setup_deploy_agent.html"
+                            target="_self"><span translate="no" class="notranslate">Italiano</span></a>
+                    </li></ul>
+            </div>
+            </li>
+        <!-- End Language Selector -->
+
+
+        <li id="ie-allnetapp">
+            <div id="allnetapp-dropdown" class="custom-dropdown custom-dropdown-allnetapp">
+                <div class="custom-dropdown-select custom-dropdown-select-allnetapp">
+                    <img src="/ja-jp/converged-systems-advisor/images/apps_white_24dp.svg" alt="" class="allnetapp-icon" />
+                    <span class="allnetapp-name">すべてのNetApp</span>
+                    <img src="/ja-jp/converged-systems-advisor/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown header invisible" />
+                    <img src="/ja-jp/converged-systems-advisor/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup header" />
+                    </button>
+                </div>
+
+                <ul class="custom-dropdown-menu allnetapp-dropdown">
+                    <li>
+                        <a href="https://bluexp.netapp.com/ja/"
+                            target="_self"><span translate="no" class="notranslate">BlueXP</span></a>
+                    </li>
+                    <li>
+                        <a href="https://mysupport.netapp.com/site/"
+                            target="_self"><span translate="no" class="notranslate">サポート</span></a>
+                    </li>
+                    <li>
+                        <a href="https://kb-ja.netapp.com/"
+                            target="_self"><span translate="no" class="notranslate">ナレッジ ベース</span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.netapp.com/support-and-training/netapp-learning-services/"
+                            target="_self"><span translate="no" class="notranslate">トレーニング</span></a>
+                    </li>
+                </ul>
+            </div>
+
+        </li>
+
+    </ul>
+</nav>
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+
+<div id="ie-new-sidebar-collapse" style="display: none">
+    <img id="sidebar-expand" class="ie-searchbox-icon" src="/ja-jp/converged-systems-advisor/images/double_arrow.svg" alt="" />
+</div>
+<div id="ie-new-sidebar">
+    <div id="ie-product-identity-lockup">
+        <div id="sidebar-collapse" class="">
+            <img src="/ja-jp/converged-systems-advisor/images/double_arrow.svg" alt="" />
+        </div>
+        <div id="ie-breadcrumb" class="">
+  <ul class="ie-breadcrumb">
+    <li class="">
+      <a href="https://docs.netapp.com">すべてのドキュメント</a>
+    </li>
+    
+    
+
+    
+  </ul>
+  
+  <div class="ie-product-name" >
+    <!--<a href="/ja-jp/converged-systems-advisor/">-->
+      Converged Systems Advisor
+    <!--</a>-->
+  </div>
+</div>
+
+            
+
+        
+        
+
+<div id="ie-searchbox" class="ie-searchbox-sidebar ">
+    <img class="ie-searchbox-icon" src="/ja-jp/converged-systems-advisor/images/loupe.svg" alt=""/>
+    <div id="react-search" 
+        data-search-html="/ja-jp/converged-systems-advisor/search.html" 
+        data-type="widget"
+        data-placeholder="ドキュメントを検索"
+        data-no-results-found="{query}に一致する結果は見つかりませんでした"
+        data-did-you-mean="{suggestion}で検索しています。"
+        data-no-results-found-did-you-mean="{query}に一致する結果は見つかりませんでした。{suggestion}で検索しますか？"
+        data-results-found="{hitCount}件の結果が見つかりました"
+        data-error-message="エラーが発生しました。もう一度お試しください。"
+        data-error-reset="検索をリセット"
+        data-sk-es-pf-indexes="" 
+        data-flavor="">
+    </div>
+</div>
+        
+    </div>
+    <div id="ie-new-toc"><script>
+  let sidebarAccordion = true;
+
+  /* specific css rules for Mac */
+  if(navigator.platform.match('Mac') !== null) {
+    document.body.setAttribute('class', 'OSX');
+  }
+
+</script>
+
+<div id="ie-sidebar-container">
+  <ul id="ie-sidebar-list" ><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Converged Systems Advisor のドキュメント"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/task_setup_deploy_agent.html" 
+      dale-entry-url="/index.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/ja-jp/converged-systems-advisor/index.html">
+        Converged Systems Advisor のドキュメント
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="リリースノート"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task_setup_deploy_agent.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/converged-systems-advisor/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/converged-systems-advisor/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> リリースノート</div>-->
+         リリースノート
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="新機能"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task_setup_deploy_agent.html" 
+      dale-entry-url="/reference_new.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/converged-systems-advisor/reference_new.html">
+        新機能
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="新機能のアーカイブ"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task_setup_deploy_agent.html" 
+      dale-entry-url="/reference_archive.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/converged-systems-advisor/reference_archive.html">
+        新機能のアーカイブ
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="既知の問題"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task_setup_deploy_agent.html" 
+      dale-entry-url="/reference_issues.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/converged-systems-advisor/reference_issues.html">
+        既知の問題
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="概念"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task_setup_deploy_agent.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/converged-systems-advisor/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/converged-systems-advisor/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 概念</div>-->
+         概念
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="概要"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task_setup_deploy_agent.html" 
+      dale-entry-url="/concept_overview.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/converged-systems-advisor/concept_overview.html">
+        概要
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="アーキテクチャ"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task_setup_deploy_agent.html" 
+      dale-entry-url="/concept_architecture.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/converged-systems-advisor/concept_architecture.html">
+        アーキテクチャ
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ライセンス"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task_setup_deploy_agent.html" 
+      dale-entry-url="/concept_licensing.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/converged-systems-advisor/concept_licensing.html">
+        ライセンス
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="セキュリティ"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task_setup_deploy_agent.html" 
+      dale-entry-url="/concept_security.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/converged-systems-advisor/concept_security.html">
+        セキュリティ
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ユーザロール"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task_setup_deploy_agent.html" 
+      dale-entry-url="/reference_user_roles.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/converged-systems-advisor/reference_user_roles.html">
+        ユーザロール
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="はじめに"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task_setup_deploy_agent.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/converged-systems-advisor/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/converged-systems-advisor/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> はじめに</div>-->
+         はじめに
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="クイックスタート"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task_setup_deploy_agent.html" 
+      dale-entry-url="/task_quick_start.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/converged-systems-advisor/task_quick_start.html">
+        クイックスタート
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="環境を準備"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task_setup_deploy_agent.html" 
+      dale-entry-url="/task_prepare_environment.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/converged-systems-advisor/task_prepare_environment.html">
+        環境を準備
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="FlexPod デバイスのアカウントを作成します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task_setup_deploy_agent.html" 
+      dale-entry-url="/task_create_accounts_flexpod_devices.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/converged-systems-advisor/task_create_accounts_flexpod_devices.html">
+        FlexPod デバイスのアカウントを作成します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="エージェントをセットアップして配備します"
+      data-li-level="2#" 
+      class="  ie-sidebar-selected    "
+      dale-page-url="/task_setup_deploy_agent.html" 
+      dale-entry-url="/task_setup_deploy_agent.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/converged-systems-advisor/task_setup_deploy_agent.html">
+        エージェントをセットアップして配備します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ポータルにインフラストラクチャを追加します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task_setup_deploy_agent.html" 
+      dale-entry-url="/task_add_infrastructure.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/converged-systems-advisor/task_add_infrastructure.html">
+        ポータルにインフラストラクチャを追加します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="通知を設定する"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task_setup_deploy_agent.html" 
+      dale-entry-url="/task_configure_notifications.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/converged-systems-advisor/task_configure_notifications.html">
+        通知を設定する
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="エージェントに静的 IP を設定します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task_setup_deploy_agent.html" 
+      dale-entry-url="/task_setting_static_ip.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/converged-systems-advisor/task_setting_static_ip.html">
+        エージェントに静的 IP を設定します
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="インフラを監視する"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task_setup_deploy_agent.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/converged-systems-advisor/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/converged-systems-advisor/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> インフラを監視する</div>-->
+         インフラを監視する
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="インフラの歴史を確認"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task_setup_deploy_agent.html" 
+      dale-entry-url="/task_review_infrastructure_history.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/converged-systems-advisor/task_review_infrastructure_history.html">
+        インフラの歴史を確認
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ルールを監視する"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task_setup_deploy_agent.html" 
+      dale-entry-url="/task_monitor_rules.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/converged-systems-advisor/task_monitor_rules.html">
+        ルールを監視する
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="レポートを生成します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task_setup_deploy_agent.html" 
+      dale-entry-url="/task_generate_reports.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/converged-systems-advisor/task_generate_reports.html">
+        レポートを生成します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="サポート契約の追跡"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task_setup_deploy_agent.html" 
+      dale-entry-url="/task_track_contracts.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/converged-systems-advisor/task_track_contracts.html">
+        サポート契約の追跡
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="パートナーとリセラーの導入を検証します"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/task_setup_deploy_agent.html" 
+      dale-entry-url="/task_deployment_validation_partners_resellers.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/ja-jp/converged-systems-advisor/task_deployment_validation_partners_resellers.html">
+        パートナーとリセラーの導入を検証します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="トラブルシューティング"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/task_setup_deploy_agent.html" 
+      dale-entry-url="/task_troubleshooting.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/ja-jp/converged-systems-advisor/task_troubleshooting.html">
+        トラブルシューティング
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="関連リンク"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/task_setup_deploy_agent.html" 
+      dale-entry-url="/reference_additional_info.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/ja-jp/converged-systems-advisor/reference_additional_info.html">
+        関連リンク
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="法的通知"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/task_setup_deploy_agent.html" 
+      dale-entry-url="/reference_legal_notices.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/ja-jp/converged-systems-advisor/reference_legal_notices.html">
+        法的通知
+      </a></li></ul>
+</div>
+<script>
+
+  $(".ie-sidebar-button").click(function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    expandedLI = $('li.ie-sidebar-expand')
+
+    const li = $(this).closest("li");
+
+    const parentsLI = $(li).parents('li');
+
+    expandedLI.map(element => {
+      if (sidebarAccordion && !li.hasClass('ie-sidebar-expand') && jQuery.inArray(expandedLI[element], parentsLI) == -1) {
+        $(expandedLI[element]).toggleClass('ie-sidebar-expand');
+        $(expandedLI[element]).children("ul").animate({ height: 'toggle' }, 400, function () {
+          $(li).children("ul").toggleClass('ie-sidebar-open');
+
+        })
+      }
+
+    })
+
+    $(li).toggleClass('ie-sidebar-expand');
+    $(li).children("ul").animate({ height: 'toggle' }, 400, function () {
+      $(li).children("ul").toggleClass('ie-sidebar-open');
+    })
+  });
+
+
+  
+    $("li.ie-sidebar-selected").parents('ul').toggleClass("ie-sidebar-open");
+    $("li.ie-sidebar-selected").toggleClass("ie-sidebar-expand")
+    $("ul.ie-sidebar-open").parent().toggleClass("ie-sidebar-expand");
+    $("li.ie-sidebar-selected").children('ul').toggleClass("ie-sidebar-open")
+  
+  
+</script>
+    </div>
+</div>
+<script>
+
+    
+    let sidebarScrollTopPosition = 0;
+    $("#ie-new-toc").on("scroll", function () {
+        if (sidebarScrollTopPosition == 0) {
+            $.cookie("sidebarScroll", $("#ie-new-toc").scrollTop(), {
+                path: "/ja-jp/converged-systems-advisor"
+            });
+        }
+
+        if ($("#ie-new-toc").scrollTop() > 0) {
+            $('#ie-product-identity-lockup').addClass('ie-addShadow');
+        } else {
+            $('#ie-product-identity-lockup').removeClass('ie-addShadow');
+        }
+    });
+
+    $(function () {
+        if ($.cookie("sidebarScroll")) {
+            $("#ie-new-toc").scrollTop($.cookie("sidebarScroll"));
+        }
+    });
+
+    function setSidebarBottom() {
+        const footerGap = PXinViewport($(".n-footer"));
+        document.getElementById("ie-new-sidebar").style.bottom = Math.max(0, footerGap) + "px";
+    }
+
+    window.onscroll = () => {
+        setSidebarBottom();
+    };
+
+    $("#sidebar-collapse").click(function (e) {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        e.preventDefault();
+        const width = $(".ie-content-pane").width();
+        const marginLeft = parseInt($(".ie-content-pane").css('marginLeft'));
+
+        if ($.cookie("sidebarScroll")) {
+            sidebarScrollTopPosition = $.cookie("sidebarScroll");
+        }
+
+        $("#ie-new-sidebar").animate({ width: 'toggle' }, 350, function () {
+            $("#ie-new-sidebar-collapse").show();
+            $("#ie-new-sidebar").removeClass("open")
+            $("#ie-new-sidebar").addClass("close")
+            $("#ie-new-sidebar").removeAttr("style")
+        });
+        $(".ie-content-pane").animate({ width: (width + sidebarWidth), marginLeft: (marginLeft - sidebarWidth) }, 350, function () {
+            resizeContent()
+        })
+
+    });
+    $("#sidebar-expand").click(function (e) {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        e.preventDefault();
+        const width = $(".ie-content-pane").width();
+        const marginLeft = parseInt($(".ie-content-pane").css('marginLeft'));
+
+        $("#ie-new-sidebar").animate({ width: 'toggle' }, 250, function () {
+            $('#ie-new-sidebar').css('display', 'flex');
+            $("#ie-new-sidebar-collapse").hide();
+            $("#ie-new-sidebar").removeClass("close")
+            $("#ie-new-sidebar").addClass("open")
+            setSidebarBottom();
+
+            if (sidebarScrollTopPosition != 0) {
+                $.cookie("sidebarScroll", sidebarScrollTopPosition, {
+                    path: "/ja-jp/converged-systems-advisor"
+                })
+                $("#ie-new-toc").scrollTop(sidebarScrollTopPosition);
+                sidebarScrollTopPosition = 0;
+            }
+        });
+        $(".ie-content-pane").animate({ width: (width - sidebarWidth), 'marginLeft': (marginLeft + sidebarWidth) }, 250, function () {
+            resizeContent()
+        })
+    });
+    function resizeContent() {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        const rightNavbarVisible =  $("#ie-right-navbar").css('display') && $("#ie-right-navbar").css('display') != 'none';
+        const sidebarVisible = $("#ie-new-sidebar").css('display') != 'none';
+        const rightNavbarWidth = $("#ie-right-navbar").width();
+        const rightNavbarCollapseWidth = $("#ie-right-navbar-collapse").width();
+        const rightNavbarCollapseVisible = $("#ie-right-navbar-collapse").css('display') && $("#ie-right-navbar-collapse").css('display') != 'none';
+        
+        if (rightNavbarVisible && sidebarVisible) {
+            $(".ie-content-pane").width(`calc(100% - ${sidebarWidth + rightNavbarWidth}px)`)
+            $(".ie-content-pane").css('marginLeft', `${sidebarWidth}px`)
+        } else if (sidebarVisible) {
+            $(".ie-content-pane").css('marginLeft', `${sidebarWidth}px`)
+            if (rightNavbarCollapseVisible) {
+                $(".ie-content-pane").width(`calc(100% - ${sidebarWidth + rightNavbarCollapseWidth}px)`)
+            } else {
+                $(".ie-content-pane").width(`calc(100% - ${$("#ie-new-sidebar").width()}px)`)
+            }
+
+        } else if (rightNavbarVisible) {
+            $(".ie-content-pane").css('marginLeft', `${$("#ie-new-sidebar-collapse").width()}px`)
+            $(".ie-content-pane").width(`calc(100% - ${rightNavbarWidth}px)`)
+        } else {
+            $(".ie-content-pane").css('marginLeft', `${$("#ie-new-sidebar-collapse").width()}px`)
+            if (rightNavbarCollapseVisible) {
+                $(".ie-content-pane").width(`calc(100% - ${rightNavbarCollapseWidth}px)`);
+            } else {
+                $(".ie-content-pane").width(`calc(100% - ${$("#ie-new-sidebar-collapse").width()}px) `);
+            }
+            
+        }
+    }
+    $(window).on("resize load", function () {
+        setSidebarBottom();
+        resizeContent()
+    });
+
+
+</script>
+
+<div class="ie-content-pane ie-component-detail-content ie-component-detail-content--show-code">
+    <!-- Begin of page container --><article class="page-content" id="main">
+      <!-- include utility.html -->
+      <div class="ie-info-disclaimer">
+    <span>
+      <div class="ie-info-disclaimer-container">
+        <div class="ie-info-disclaimer-icon">
+          <img src="/ja-jp/converged-systems-advisor/images/notification-icons.svg" class="luci-icon" alt="" />
+        </div>
+        <div class="ie-info-disclaimer-content">
+          <span> 日本語は機械翻訳による参考訳です。内容に矛盾や不一致があった場合には、英語の内容が優先されます。 </span>
+        </div>
+        <div style="clear:both;"></div>
+      </div>
+    </span>
+  </div><div class="ie-component-detail-heading-wrap">
+  <h1 class="ie-component-detail-heading">エージェントをセットアップして展開します</h1>
+</div>
+
+<div id="ie-byline">
+  
+<div class="page-details">
+    
+        
+            <time datetime="2022-12-14 17:50:45 +0000">12/14/2022</time>
+        
+    
+    
+        <span>共同作成者
+        </span>
+    
+    
+</div>
+<div class="page-controls">
+    <div id="contribute-dropdown" class="custom-dropdown custom-dropdown-contrib" >
+        <div class="custom-dropdown-select custom-dropdown-select-contrib">
+        <span class="contrib-name"><img src="/ja-jp/converged-systems-advisor/images/discuss-sm.svg" alt="" class="github-icon" />変更を提案</span>
+        <img src="/ja-jp/converged-systems-advisor/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown invisible" />
+        <img src="/ja-jp/converged-systems-advisor/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup" />
+        </div>
+        <ul class="custom-dropdown-menu suggested-changes-dropdown"><li>
+                <a target="_blank" href="https://github.com/NetAppDocs/converged-systems-advisor.ja-jp/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/ja-jp/converged-systems-advisor/task_setup_deploy_agent.html&page-title=エージェントをセットアップして展開します" class="page-nav-contribute-link" role="button">ドキュメントの変更をリクエスト</a>
+            </li><li> 
+                <a target="_blank" href="https://github.com/NetAppDocs/converged-systems-advisor/blob/main/task_setup_deploy_agent.adoc" class="page-nav-contribute-link" role="button">このページを編集</a>
+            </li><li><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  >フィードバックを送るには</a></li>
+        </ul>
+    </div>
+    <div id="pdf-control-container">
+        <div class="n-pdf-header">
+            <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+                <img class="adobe-icon" src="/ja-jp/converged-systems-advisor/images/pdf-icon.png" alt="" width="16" height="16"/>PDF<img src="/ja-jp/converged-systems-advisor/images/dropdown-arrow.svg" class="custom-icon" alt="" />
+            </a>
+        </div>
+        <div class="n-pdf-body-container">
+            <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+                    
+                    
+                    
+                    <a target="_blank" class="pdf-download-link" href="/ja-jp/converged-systems-advisor/pdfs/fullsite-sidebar/Converged_Systems_Advisor.pdf" >
+                    <img src="/ja-jp/converged-systems-advisor/images/pdf-icon.png" alt="" width="16" height="16"/>このドキュメント ページのPDF</a>
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/converged-systems-advisor/pdfs/sidebar/リリースノート.pdf" 
+            
+          >
+            <img src="/ja-jp/converged-systems-advisor/images/pdf-icon.png" alt="" width="16" height="16"/>
+            リリースノート
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/converged-systems-advisor/pdfs/sidebar/概念.pdf" 
+            
+          >
+            <img src="/ja-jp/converged-systems-advisor/images/pdf-icon.png" alt="" width="16" height="16"/>
+            概念
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/converged-systems-advisor/pdfs/sidebar/はじめに.pdf" 
+            
+          >
+            <img src="/ja-jp/converged-systems-advisor/images/pdf-icon.png" alt="" width="16" height="16"/>
+            はじめに
+          </a>
+          
+
+
+
+
+
+
+    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
+  
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/converged-systems-advisor/pdfs/sidebar/インフラを監視する.pdf" 
+            
+          >
+            <img src="/ja-jp/converged-systems-advisor/images/pdf-icon.png" alt="" width="16" height="16"/>
+            インフラを監視する
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+</li></ul>
+            <div class="zip-pdf-link-container" style="display: none;">   
+                <a href="#" id="zipPdf">
+                <img src="/ja-jp/converged-systems-advisor/images/pdf-zip.png" alt="" width="16" height="16"/>
+                <pre>PDF版ドキュメントのセット<span class="zip-size"></span></pre>
+                </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+        </div>
+    </div>        
+<script>
+$("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+$("#toggleButtonPdf").on('click', function(e){ 
+    e.stopPropagation();
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+});
+
+//hide is by clicking outside pdfcontainer
+$(document).on('click', function (e) {
+    if ($('#toggleContainerPdf').is(':visible') && !$('.n-pdf-body-container').is(e.target) && !$('.n-pdf-body-container').has(e.target).length)  {
+        
+        $("#toggleContainerPdf").toggle('display');
+        $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+        $("#toggleButtonPdf").removeClass("active");
+    }
+});
+</script>
+<script>
+    function getPdfLocation() {
+        const pdfLocation = window.scrollX + document.querySelector('#pdf-control-container').getBoundingClientRect().left
+        if (pdfLocation < 450) {
+            $(".n-pdf-body-container").addClass("block")
+        } else {
+            $(".n-pdf-body-container").removeClass("block")
+        }
+    
+    }
+    $( window ).on( "resize", function() {
+        getPdfLocation()
+} );
+</script>
+<script>
+    const pdfButtonWidth =  $(".n-pdf-header").width();
+    const pdfMenuWidth = $(".n-pdf-body-container").width();
+    $(".n-pdf-body-container").css('margin-left', `calc(${pdfButtonWidth - pdfMenuWidth}px)`);
+</script>
+</div>
+
+    
+
+</div>
+
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>VMware ESXi サーバに Converged Systems Advisor エージェントを導入する必要があります。エージェントは、 FlexPod コンバージドインフラ内の各デバイスに関する構成データを収集し、そのデータを Converged Systems Advisor ポータルに送信します。</p>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p><a href="#エージェントをダウンロードしてインストールします">エージェントをダウンロードしてインストールします</a></p>
+</li>
+<li>
+<p><a href="#エージェントのネットワークを設定します">エージェントのネットワークを設定します</a></p>
+</li>
+<li>
+<p><a href="#エージェントに-ssl-証明書をインストールします">エージェントに SSL 証明書をインストールします</a></p>
+</li>
+<li>
+<p><a href="#flexpod-インフラストラクチャを検出するようにエージェントを設定します">FlexPod インフラストラクチャを検出するようにエージェントを設定します</a></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="エージェントをダウンロードしてインストールします">エージェントをダウンロードしてインストールします</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>VMware ESXi サーバに Converged Systems Advisor エージェントを導入する必要があります。</p>
+</div>
+<div class="paragraph">
+<div class="title">このタスクについて</div>
+<p>帯域幅の使用量を最小限に抑えるには、 FlexPod 構成と同じデータセンターにある VMware ESXi サーバにエージェントをインストールする必要があります。エージェントは、各 FlexPod コンポーネントとインターネットに接続し、 HTTPS ポート 443 を使用して Converged Systems Advisor ポータルに設定データを送信できるようにする必要があります。</p>
+</div>
+<div class="paragraph">
+<p>エージェントは、 Open Virtualization Format （ OVF ）テンプレートから VMware vSphere 仮想マシンとして導入されます。このテンプレートは、 1 vCPU と 2 GB の RAM を持つ Debian ベースのものです（複数以上の FlexPod システムに必要な場合があります）。</p>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>エージェントをダウンロードします。</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>にログインします <a href="https://csa.netapp.com/" target="_blank" rel="noopener">"Converged Systems Advisor ポータル"</a>。</p>
+</li>
+<li>
+<p>［ * エージェントのダウンロード * ］ をクリックします。</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>VMware ESXi サーバに OVF テンプレートを導入して、エージェントをインストールします。</p>
+<div class="paragraph">
+<p>VMware の一部のバージョンでは、 OVF テンプレートの導入時に警告が表示されることがあります。仮想マシンは最新バージョンの vCenter で開発されたものであり、古いバージョンのハードウェアとの互換性があるため、警告が表示される可能性があります。警告を確認してからインストールを続行する前に、設定オプションを確認してください。</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="エージェントのネットワークを設定します">エージェントのネットワークを設定します</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>エージェントと FlexPod デバイス間、およびエージェントと複数のインターネットエンドポイント間の通信を可能にするには、エージェント仮想マシンでネットワークが正しく設定されていることを確認する必要があります。ネットワークスタックは、システムが初期化されるまで仮想マシン上で無効になります。</p>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>アウトバウンドインターネット接続で、次のエンドポイントへのアクセスが有効になっていることを確認します。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>csa.netapp.com</p>
+</li>
+<li>
+<p>docker.com</p>
+</li>
+<li>
+<p>Docker .io と入力します</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>VMware vSphere Client を使用して、エージェントの仮想マシンコンソールにログインします。</p>
+<div class="paragraph">
+<p>デフォルトのユーザ名は「 CSA 」で、デフォルトのパスワードは「 netapp 」です。</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/converged-systems-advisor/images/tip.svg" alt="ヒント">
+</td>
+<td class="content">
+セキュリティ上の理由から、 SSHD はデフォルトで無効になっています。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>プロンプトが表示されたら、デフォルトのパスワードを変更し、パスワードをメモします。回復できないためです。</p>
+<div class="paragraph">
+<p>パスワードを変更すると、システムがリブートし、エージェントソフトウェアが起動します。</p>
+</div>
+</li>
+<li>
+<p>DHCP がサブネットにない場合は、標準の Debian ツールを使用して静的 IP アドレスと DNS 設定を構成し、エージェントを再起動します。</p>
+<div class="paragraph">
+<p><a href="task_setting_static_ip.html">"詳細な手順については、ここをクリックしてください"</a>。</p>
+</div>
+<div class="paragraph">
+<p>Debian 仮想マシンのネットワーク構成は、デフォルトで DHCP に設定されています。NetworkManager がインストールされ、コマンド nmtui から起動できるテキストユーザインターフェイスが提供されます（を参照） <a href="https://manpages.debian.org/stretch/network-manager/nmtui.1.en.html" target="_blank" rel="noopener">"のマニュアルページ"</a> 詳細については、を参照してください）。</p>
+</div>
+<div class="paragraph">
+<p>ネットワークの詳細については、を参照してください <a href="https://wiki.debian.org/NetworkConfiguration" target="_blank" rel="noopener">"Debian wiki のネットワーク設定ページ"</a>。</p>
+</div>
+</li>
+<li>
+<p>セキュリティポリシーで、 FlexPod デバイスと通信するためにエージェントを 1 つのネットワークに配置し、インターネットと通信するために別のネットワークに配置する必要がある場合は、 vCenter で 2 つ目のネットワークインターフェイスを追加し、正しい VLAN と IP アドレスを設定します。</p>
+</li>
+<li>
+<p>インターネットアクセスにプロキシサーバが必要な場合は、次のコマンドを実行します。</p>
+<div class="paragraph">
+<p>'UDO CSA_SET_PROXY'</p>
+</div>
+<div class="paragraph">
+<p>このコマンドにより、 2 つのプロンプトが生成され、プロキシエントリに必要な形式が表示されます。最初のプロンプトでは HTTP プロキシを指定し、 2 番目のプロンプトでは HTTPS プロキシを指定できます。</p>
+</div>
+<div class="paragraph">
+<p>HTTP プロキシを <a href="http://user:password@proxy-server:proxy-port`" class="bare">http://user:password@proxy-server:proxy-port`</a> の形式で入力します</p>
+</div>
+<div class="paragraph">
+<p>インターネットアクセスに HTTP プロキシが不要な場合は、空白のままにします。</p>
+</div>
+</li>
+<li>
+<p>ネットワークが起動したら、システムがアップデートされて起動するまで約 5 分間待ちます。</p>
+<div class="paragraph">
+<p>エージェントが動作可能になると、コンソールにブロードキャストメッセージが表示されます。</p>
+</div>
+</li>
+<li>
+<p>エージェントから次の CLI コマンドを実行して、接続を確認します。</p>
+<div class="literalblock">
+<div class="content">
+<pre>curl -k https://www.netapp.com/us/index.aspx</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>コマンドが失敗した場合は、 DNS 設定を確認します。エージェント仮想マシンには、有効な DNS 設定があり、 csa.netapp.com にアクセスできる必要があります。</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="エージェントに-ssl-証明書をインストールします">エージェントに SSL 証明書をインストールします</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>オプション：必要に応じて、 SSL 証明書をエージェントにインストールします。</p>
+</div>
+<div class="paragraph">
+<p>仮想マシンの初回ブート時に、エージェントが自己署名証明書を作成します。必要に応じて、その証明書を削除して独自の SSL 証明書を使用できます。</p>
+</div>
+<div class="paragraph">
+<div class="title">このタスクについて</div>
+<p>Converged Systems Advisor は次の機能をサポートします。 * OpenSSL バージョン 1.0.1 以降と互換性のある暗号 * TLS 1.1 および TLS 1.2</p>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>エージェントの仮想マシンコンソールにログインします。</p>
+</li>
+<li>
+<p>/opt/csa/certs に移動します</p>
+</li>
+<li>
+<p>エージェントが作成した自己署名証明書を削除します。</p>
+</li>
+<li>
+<p>SSL 証明書を貼り付けます。</p>
+</li>
+<li>
+<p>仮想マシンを再起動します。</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="flexpod-インフラストラクチャを検出するようにエージェントを設定します">FlexPod インフラストラクチャを検出するようにエージェントを設定します</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>FlexPod コンバージドインフラの各デバイスから構成データを収集するようにエージェントを設定する必要があります。エージェントは、構成データを収集するためにクレデンシャルを必要としますエージェントの設定時にクレデンシャルを指定する必要があります。</p>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>Web ブラウザを開き、エージェント仮想マシンの IP アドレスを入力します。</p>
+</li>
+<li>
+<p>お客様の NetApp Support Site アカウントのユーザ名とパスワードでエージェントにログインします。</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/converged-systems-advisor/images/note.svg" alt="メモ">
+</td>
+<td class="content">
+お客様の代わりにライセンス版の CSA を導入するパートナーは、このステップでお客様のアカウントを使用することが重要です（ネットアップのサポートおよび記録管理のため）。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>エージェントが検出する FlexPod デバイスを追加します。</p>
+<div class="paragraph">
+<p>次の 2 つのオプションがあります。</p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>[ デバイスの追加 ] をクリックして、 FlexPod デバイスの詳細を 1 つずつ入力します。</p>
+</li>
+<li>
+<p>[ デバイスのインポート ] をクリックして、すべてのデバイスの詳細を含む CSV テンプレートを入力し、アップロードします。</p>
+<div class="paragraph">
+<p>注： * ユーザー名とパスワードは、以前にデバイス用に作成したアカウントに設定する必要があります。* UCS 環境で LDAP ユーザ管理が設定されている場合は、ユーザ名の前にユーザのドメインを追加する必要があります。たとえば、 local\csa-readonly と指定します</p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">結果</div>
+<p>FlexPod インフラストラクチャ内の各デバイスがチェックマーク付きで表に表示されます。<span class="image"><img src="./media/screenshot_agent_configuration.gif" alt="&quot;必要な各デバイスを [ ステータス"></span> 列に緑色のチェックマークで表示します。"]</p>
+</div>
+</div>
+</div>
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  
+  <!-- Start Page Toolbar -->
+<div id="ie-right-navbar-collapse" class="close">
+  <img id="navbar-expand" class="ie-searchbox-icon" src="/ja-jp/converged-systems-advisor/images/double_arrow.svg" alt="" />
+</div>
+<div id="ie-right-navbar" class="open">
+  <div id="right-navbar-collapse">
+    <img src="/ja-jp/converged-systems-advisor/images/double_arrow.svg" alt="" />
+  </div>
+  <div class="page-nav-container">
+    <nav class="page-nav-fixed">
+      <div class="page-nav-title">このページ</div>
+      <div class="page-nav-links">
+        <ul class="page-nav-inner" id="page-menu"></ul>
+      </div>
+    </nav>
+  </div>
+</div>
+
+
+<script>
+  resizeContent();
+  function setRightBarHeight() {
+    var h = 0;
+
+    // header 1
+    h += PXinViewport($('.n-footer'));
+    h += PXinViewport($('#ie-new-header'));
+
+    if ($('#ie-right-navbar').length) {
+      $('#ie-right-navbar').css({ height: `calc(100vh - ${h}px)` });
+    }
+    if ($('.page-nav-links').length) {
+      h += 98;
+      $('.page-nav-links').css({ height: `calc(100vh - ${h}px)` });
+    }
+  }
+
+  $(document).ready(function () {
+    // PAGE NAV - Click
+    const MASTHEAD_OFFSET = 65;
+    const SECTIONS = $("main h2, main h3");
+    let calculateActiveSection = false;
+    setTimeout(() => {
+      calculateActiveSection = true;
+    }, 100)
+
+    $(".page-nav__link").click(function (event) {
+      calculateActiveSection = false;
+      $(".page-nav__link").removeClass('page-nav__link--active');
+      var target = $(event.target);
+      target.addClass('page-nav__link--active');
+      location.hash = event.target.hash;
+      setTimeout(() => {
+        calculateActiveSection = true;
+      }, 100)
+
+    });
+
+    // PAGE NAV - Scroll
+    $(window).on('resize scroll', function () {
+      if (calculateActiveSection) {
+        var activeSection = getActiveSection(SECTIONS, MASTHEAD_OFFSET);
+        if (activeSection) {
+          var activeHref = $(activeSection).attr('id');
+          $(".page-nav__link").removeClass('page-nav__link--active');
+          $("#page-menu a[href=#" + activeHref + "]").addClass('page-nav__link--active');
+          if (location.hash != "#" + activeHref) {
+            if (history.replaceState) {
+              history.replaceState(null, null, "#" + activeHref);
+            }
+          }
+        }
+      }
+    });
+
+    $(".n-pdf-button").click(function () {
+      $(this).toggleClass("active");
+    });
+
+    $.fn.isVisibleAndInViewport = function () {
+      var elementTop = $(this).offset().top;
+      var elementBottom = elementTop + $(this).outerHeight();
+
+      var viewportTop = $(window).scrollTop();
+      var viewportBottom = viewportTop + $(window).height();
+
+      return elementBottom > viewportTop && elementTop < viewportBottom && $(this).is(":visible");
+    };
+
+
+    $(window).on('resize scroll', function () {
+      setRightBarHeight();
+    });
+
+    $(window).trigger('resize');
+
+
+  });
+
+  $("#right-navbar-collapse").click(function (e) {
+    const rightNavbarWidth = $("#ie-right-navbar").width() - $("#ie-right-navbar-collapse").width();
+    e.preventDefault();
+    const width = $(".ie-content-pane").width();
+
+    $("#ie-right-navbar").animate({ width: 'toggle' }, 350, function () {
+      $("#ie-right-navbar-collapse").removeClass("close")
+      $("#ie-right-navbar-collapse").addClass("open")
+      $("#ie-right-navbar").removeClass("open")
+      $("#ie-right-navbar").addClass("close")
+    });
+    $(".ie-content-pane").animate({ width: (width + rightNavbarWidth) }, 350, function () {
+      resizeContent()
+      setSidebarBottom();
+    })
+
+  });
+  $("#navbar-expand").click(function (e) {
+    const rightNavbarWidth = $("#ie-right-navbar").width() - $("#ie-right-navbar-collapse").width();
+    e.preventDefault();
+    const width = $(".ie-content-pane").width();
+    $("#ie-right-navbar").animate({ width: 'toggle' }, 250, function () {
+      $("#ie-right-navbar-collapse").removeClass("open")
+      $("#ie-right-navbar-collapse").addClass("close")
+      $("#ie-right-navbar").removeClass("close")
+      $("#ie-right-navbar").addClass("open")
+      setRightBarHeight();
+      setSidebarBottom();
+    });
+    $(".ie-content-pane").animate({ width: (width - rightNavbarWidth) }, 250, function () {
+      resizeContent()
+    })
+  });
+
+  function navbarResize() {
+    const rightNavbarResized = $("#ie-right-navbar-collapse").hasClass('resized');
+    if (window.innerWidth < 1024) {
+      $("#ie-right-navbar").removeClass("open")
+      $("#ie-right-navbar").addClass("close")
+      $("#ie-right-navbar").removeAttr("style")
+      $("#ie-right-navbar-collapse").removeClass("close")
+      $("#ie-right-navbar-collapse").addClass("open")
+      $("#ie-right-navbar-collapse").addClass("resized")
+    } else {
+      if (rightNavbarResized) {
+        $('#ie-right-navbar').removeClass('close');
+        $('#ie-right-navbar').addClass('open');
+        $("#ie-right-navbar-collapse").removeClass("resized")
+        $("#ie-right-navbar-collapse").removeClass("open")
+        $("#ie-right-navbar-collapse").addClass("close")
+      }
+    }
+    resizeContent()
+  }
+  navbarResize();
+  $(window).on('resize load', function () {
+    navbarResize()
+  });
+
+  function getActiveSection(sections, offset) {
+    var scrollPosition = $(window).scrollTop() + offset + 5;
+    var activeSection;
+    for (var i = 0; i < sections.length; i++) {
+      var el = $(sections[i]);
+      var activePosition = el.offset().top;
+      if (activePosition > scrollPosition) {
+        break;
+      }
+
+      activeSection = sections[i];
+    }
+
+    return activeSection;
+  }
+
+  $("a[href*=#]:not([href=#])").click(function () {
+    setTimeout(() => {
+      $(window).trigger('scroll');
+    }, 105)
+  })
+
+  const hashOnLoad = location.href.split("#")[1];
+  setTimeout(function () {
+    if (hashOnLoad) {
+      $(".page-nav__link").removeClass('page-nav__link--active');
+      $("#page-menu a[href=#" + hashOnLoad + "]").addClass('page-nav__link--active');
+    }
+  }, 100)
+
+</script>
+
+
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+        <div class="n-footer__left">
+          <li class="n-footer__copyright-link">
+                    <a href="https://www.netapp.com/company/legal/copyright/">© 2023 NetApp, Inc.</a>
+          </li>
+        </div>
+        <div class="n-footer__center">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">ご利用規約</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">プライバシー ポリシー</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">クッキー ポリシー</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">クッキーの設定</a>
+            </li>
+          </ul>
+       </div>
+        <div class="n-footer__right">
+              <li class="n-footer__copyright-link">
+                <a target="_self" href="javascript:netapp_mailto()">このページに関するフィードバックをお寄せください</a>
+              </li>
+        </div>
+     </div>
+  </div>
+</footer>
+
+      </div><!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/ja-jp/converged-systems-advisor/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/ja-jp/converged-systems-advisor/js/prism.js'></script>
+      <script type="text/javascript" src='/ja-jp/converged-systems-advisor/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/ja-jp/converged-systems-advisor/js/ie-tabbed-blocks.js'></script>
+    <script src='/ja-jp/converged-systems-advisor/js/ie-sidebar.js'></script>
+  </body>
+
+</html>
