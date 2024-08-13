@@ -19,4 +19,4 @@ Converged Systems Advisor は、 FlexPod インフラの導入を検証し、ビ
 Converged Systems Advisor の概要については、次のビデオをご覧ください。
 
 video::CZHu0Xp33BY[youtube,width=848,height=480]
-Converged Systems Advisor が提供する価値の詳細については、 https://www.netapp.com/us/media/ds-3896.pdf["データシートをご覧ください"^]。
+Converged Systems Advisorが提供する価値の詳細については、を参照してください https://www.netapp.com/data-storage/flexpod/cooperative-support/["データシートをご覧ください"^]。
